@@ -16,35 +16,117 @@
 
 	<link rel="stylesheet" href="stylesheets/style.css">
 
-	<!-- bootstrap switch css  -->
-	<link rel="stylesheet" href="stylesheets/bootstrap-switch.min.css">
-
-	<!-- bootstrap-switch js -->
-	<script type="text/javascript" src="javascripts/bootstrap-switch.min.js"></script>
-
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Roboto:400,700,900' rel='stylesheet' type='text/css'>
 
 	<style>
-	.glyphicon-dot:before {
-		content: "\25cf";
-		font-size: 2em;
+	/* === toggle switch === */
+	
+	.onoffswitch {
+		position: relative;
+		width: 55px;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
 	}
 	
-	.red {
-		color: red;
+	.onoffswitch-checkbox {
+		display: none;
 	}
 	
-	.green {
-		color: green;
+	.onoffswitch-label {
+		display: block;
+		overflow: hidden;
+		cursor: pointer;
+		height: 20px;
+		padding: 0;
+		line-height: 20px;
+		border: 0px solid #FFFFFF;
+		border-radius: 30px;
+		background-color: #9E9E9E;
+		transition: all 0.3s ease-in;
 	}
-	</style>
+	
+	.onoffswitch-label:before {
+		content: "";
+		display: block;
+		width: 30px;
+		margin: -5px;
+		background: #FFFFFF;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 31px;
+		border-radius: 30px;
+		box-shadow: 6px 5px 20px 0px #757575;
+		transition: all 0.3s ease-in;
+	}
+	
+	.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+		margin-left: 0;
+	}
+	
+	.onoffswitch-checkbox:checked + .onoffswitch-label:before {
+		right: 0px;
+		box-shadow: 6px 5px 12px 0px #757575;
+	}
+	/* if you guys improved this, please fork it and make a pull request. */
+	/* ====================== onoffswitch-checkbox-pink class ================= */
+	
+	.onoffswitch-checkbox-pink:checked + .onoffswitch-label-pink {
+		background-color: #FFAAD5;
+		/* on -> background color */
+	}
+	
+	.onoffswitch-checkbox-pink:checked + .onoffswitch-label-pink,
+	.onoffswitch-checkbox-pink:checked + .onoffswitch-label-pink:before {
+		border-color: #FFAAD5;
+		/* /* on -> should be same as background color */
+	}
+	
+	.onoffswitch-checkbox-pink:checked + .onoffswitch-label-pink:before {
+		background-color: #FF0080;
+		/* on -> button color */
+	}
+	/* ===================== onoffswitch-checkbox-green class ===============*/
+	
+	.onoffswitch-checkbox-green:checked + .onoffswitch-label-green {
+		background-color: #92F7D6;
+		/* on -> background color */
+	}
+	
+	.onoffswitch-checkbox-green:checked + .onoffswitch-label-green,
+	.onoffswitch-checkbox-green:checked + .onoffswitch-label-green:before {
+		border-color: #92F7D6;
+		/* /* on -> should be same as background color */
+	}
+	
+	.onoffswitch-checkbox-green:checked + .onoffswitch-label-green:before {
+		background-color: #3ACA9B;
+		/* on -> button color */
+	}
+	/* ======circle=============== */
+	
+	.circle {
+		margin-top: 5px;
+		width: 15px;
+		height: 15px;
+		box-shadow: -1px 2px 8px #A2A2A2;
+		-moz-box-shadow: -1px 2px 8px #A2A2A2;
+		-webkit-box-shadow: -1px 2px 8px #A2A2A2;
+		-o-box-shadow: -1px 2px 8px #A2A2A2;
+		border-radius: 100px;
+	}
+	
+	.greenCircle {
+		background-color: #52F0BC;
+	}
+	
+	.pinkCircle {
+		background-color: #FFF;
+	}
 
-	<script>
-	$(document).ready(function() {
-		//$("[name='my-checkbox']").bootstrapSwitch();
-		$('#dimension-switch').bootstrapSwitch('setSizeClass', '');
-	});
-	</script>
+	/*=====*/
+	</style>
 
 
 </head>
