@@ -14,12 +14,17 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 
-	<link rel="stylesheet" href="stylesheets/style.css">
+	<link rel="stylesheet" href="/stylesheets/style.css">
 
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Roboto:400,700,900' rel='stylesheet' type='text/css'>
 
 	<style>
 	/* === toggle switch === */
+	
+	body,
+	html {
+		background-color: #FFF;
+	}
 	
 	.onoffswitch {
 		position: relative;
@@ -72,19 +77,19 @@
 	/* if you guys improved this, please fork it and make a pull request. */
 	/* ====================== onoffswitch-checkbox-pink class ================= */
 	
-	.onoffswitch-checkbox-pink:checked + .onoffswitch-label-pink {
-		background-color: #FFAAD5;
+	.onoffswitch-checkbox-red:checked + .onoffswitch-label-red {
+		background-color: #EBDBDB;
 		/* on -> background color */
 	}
 	
-	.onoffswitch-checkbox-pink:checked + .onoffswitch-label-pink,
-	.onoffswitch-checkbox-pink:checked + .onoffswitch-label-pink:before {
-		border-color: #FFAAD5;
+	.onoffswitch-checkbox-red:checked + .onoffswitch-label-red,
+	.onoffswitch-checkbox-red:checked + .onoffswitch-label-red:before {
+		border-color: #EBDBDB;
 		/* /* on -> should be same as background color */
 	}
 	
-	.onoffswitch-checkbox-pink:checked + .onoffswitch-label-pink:before {
-		background-color: #FF0080;
+	.onoffswitch-checkbox-red:checked + .onoffswitch-label-red:before {
+		background-color: #D9534F;
 		/* on -> button color */
 	}
 	/* ===================== onoffswitch-checkbox-green class ===============*/
@@ -120,11 +125,14 @@
 	.greenCircle {
 		background-color: #449D44;
 	}
+
+	.redCircle{
+		background-color: #D9534F;
+	}
 	
 	.whiteCircle {
 		background-color: #FFF;
 	}
-
 	/*=====*/
 	</style>
 

@@ -8,4 +8,10 @@ router.get('/', function(req, res, next) {
 	});
 });
 
+router.get('/advanced', function(req, res) {
+	res.render('adv-console', {
+		title: "Advanced Console"
+	});
+});
+
 module.exports = router;
