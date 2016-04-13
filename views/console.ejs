@@ -5,12 +5,11 @@
 
 	<body>
 		<style>
-
 		.green li a:link,
-		.green li a:visited{
+		.green li a:visited {
 			color: #2E9476;
 		}
-
+		
 		.green .active a,
 		.green .active a:active {
 			background-color: #2E9476 !important;
@@ -86,7 +85,7 @@
 						</button>
 						</span>
 					</div>
-					
+
 					<br>
 
 					<!-- pills -->
@@ -105,25 +104,53 @@
 					<div class="tab-content">
 						<!-- overview panel -->
 						<div id="overview" class="tab-pane fade in active">
-							
-							<div class="panel panel-success">
-								<!-- panel heading -->
-								<div class="panel-heading">
-									<h3 class="panel-title">Quick Look</h3>
-								</div>
-								<!-- panel body -->
-								<div class="panel-body">
-									<div class="input-group" style="width: 70%;">
-										<input type="text" autofocus class="form-control" placeholder="Filter out...">
-										<span class="input-group-btn"><button class="btn btn-success" type="button">
+
+							<div class="input-group" style="width: 70%;">
+								<input type="text" autofocus class="form-control" placeholder="Filter out...">
+								<span class="input-group-btn"><button class="btn btn-success" type="button">
 											<span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
-										</button>
-										</span>
-									</div>
-									<br>
-								</div> <!-- end-panel-body -->
+								</button>
+								</span>
 							</div>
-						</div> <!-- overview -->
+
+							<br>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="weatherDotCom">
+										<p class="update-time">Weather updated 30 min ago</p>
+										<div class="row">
+											<div class="col-md-6">
+												<p class="temp">
+													<sub>34</sub><sup class="degC">&#8451;</sup>
+												</p>
+												<p class="feels">Feels like 35&deg;</p>
+											</div>
+
+											<div class="col-md-6">
+												<p class="w-location">Karunagapplly</p>
+												<p class="w-location">Monday April 6 2016 </p>
+
+												<p class="logicalText">Partly Cloudy</p>
+												
+											</div>
+										</div>
+
+										<p class="w-key">Wind <span class="w-value">Calm, 5km/h W</span> </p>
+										<p class="w-key">UV index <span class="w-value">Low, 0</span> </p>
+										<p class="w-key">Pressure <span class="w-value">1011 mBar</span> </p>
+										<p class="w-key">Sunrise <span class="w-value">6:15 AM</span> </p>
+										<p class="w-key">Sunset <span class="w-value">6:33 PM</span> </p>
+									</div>
+								</div>
+								<div class="col-md-6">
+
+								</div>
+							</div>
+							<!-- internet weather update area -->
+							
+
+						</div>
+						<!-- overview -->
 
 						<!-- quick pane -->
 						<div id="quick" class="tab-pane fade">
