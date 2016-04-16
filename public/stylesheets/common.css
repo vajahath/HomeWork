@@ -22,3 +22,35 @@
 	text-align:right;
 	margin-top: -25px;
 }
+.w-date{
+	text-align:right;
+	margin-top:-10px;
+}
+.w-img{
+	width:100px;
+	height:100px;
+}
+.logicalText{
+	color:yellow;
+}
+.w-key{
+	font-weight:700;
+}
+.w-value{
+	font-weight:400;
+}
+.chance{
+	font-size:15px;
+}
+
+
+.water-level{
+	margin-top:9px;
+	border:solid thin #1CB588;
+	border-radius:8px;
+	padding:10px;
+}
+
+.water-level h3{
+	color:#1cb588;
+}
