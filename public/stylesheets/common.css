@@ -3,6 +3,7 @@
 	border-radius:8px;
 	padding:8px;
 	color:#FFF;
+	margin-bottom: 10px;
 }
 .update-time{
 	font-size:80%;
@@ -45,7 +46,6 @@
 
 
 .water-level{
-	margin-top:9px;
 	border:solid thin #1CB588;
 	border-radius:8px;
 	padding:10px;
@@ -53,4 +53,30 @@
 
 .water-level h3{
 	color:#1cb588;
+}
+
+.weather-inside{
+	background-color:#5BC0DE;
+	border-radius:10px;
+	padding:10px;
+	text-align:center;
+	margin-bottom: 10px;
+}
+.in-temp{
+	margin-top:-40px;
+	font-size:500%;
+}
+.in-degC{
+	font-size:28%;
+}
+
+.card-bottom{
+	text-align:right;
+}
+.card-bottom p{
+	display:inline-block;
+}
+.card-bottom button{
+	display:inline-block;
+	margin-left: 6px;
 }
