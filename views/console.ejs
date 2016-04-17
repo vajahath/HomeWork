@@ -1,300 +1,466 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<!-- heads -->
 	<% include ./partials/head %>
-	
-	<!-- handle google charts -->
-	<% include ./partials/charts %>
+
+		<!-- handle google charts -->
+		<% include ./partials/charts %>
 
 </head>
 
-	<body>
-		<style>
-		.green li a:link,
-		.green li a:visited {
-			color: #2E9476;
-		}
-		
-		.green .active a,
-		.green .active a:active {
-			background-color: #2E9476 !important;
-			color: #FFF !important;
-		}
-		
-		.form-control:focus {
-			border-color: #449D44;
-		}
-		</style>
+<body>
+	<style>
+	.green li a:link,
+	.green li a:visited {
+		color: #2E9476;
+	}
+	
+	.green .active a,
+	.green .active a:active {
+		background-color: #2E9476 !important;
+		color: #FFF !important;
+	}
+	
+	.form-control:focus {
+		border-color: #449D44;
+	}
+	</style>
 
-		<div class="container-fluid main-content">
-			<nav class="navbar navbar-default">
-				<div class="container-fluid">
+	<div class="container-fluid main-content">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
 
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" style="font-family: 'Open Sans', sans-serif;" href="#"><strong>HomeWork</strong><span style="font-weight: 100; font-size: 120%;"> console</span></a>
-					</div>
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav navbar-right">
-							<li><a href="#">Blog</a></li>
-							<li><a href="#">Help</a></li>
-							<li>
-								<button type="button" class="btn btn-success navbar-btn">Register</button>
-							</li>
-						</ul>
-					</div>
-					<!-- /.navbar-collapse -->
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" style="font-family: 'Open Sans', sans-serif;" href="#"><strong>HomeWork</strong><span style="font-weight: 100; font-size: 120%;"> console</span></a>
 				</div>
-				<!-- /.container-fluid -->
-			</nav>
-			<!-- nav bar over -->
-
-			<!-- body starts here.. -->
-			<div class="row">
-				<div class="col-md-12 text-center">
-					<h1 class="os-300">Know your home</h1>
-					<p class="lead os-300">Status</p>
-				</div>
-			</div>
-
-			<!-- quick status -->
-			<div class="row">
-				<div class="col-sm-3 col-md-3 col-lg-4"></div>
-
-				<!-- content goes here -->
-				<div class="col-sm-6 col-md-6 col-lg-4 col-xs-12">
-					<div class="alert alert-success text-center" role="alert"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span><strong> Sweet home!</strong> Everything goes fine, relax...</div>
-				</div>
-
-				<div class="col-sm-3 col-md-3 col-lg-4"></div>
-			</div>
-
-			<!-- device status -->
-			<div class="row" style="margin-top: 15px;">
-				<!-- content goes here -->
-				<div class="col-md-1"></div>
-				<div class="col-md-7">
-
-					<!-- search box -->
-					<div class="input-group" style="width:50%;">
-						<input type="text" autofocus class="form-control" placeholder="Search...">
-						<span class="input-group-btn"><button class="btn btn-success" type="button">
-							<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-						</button>
-						</span>
-					</div>
-
-					<br>
-
-					<!-- pills -->
-					<ul class="nav nav-pills green">
-						<li class="active"><a data-toggle="pill" href="#overview" title="Overview">Overview</a></li>
-						<li><a data-toggle="pill" href="#quick" title="Quick">Quick</a></li>
-						<li><a data-toggle="pill" href="#doors" title="Doors and windows">Doors and windows</a></li>
-						<li><a data-toggle="pill" href="#appliances" title="Appliances">Appliances</a></li>
-						<li><a data-toggle="pill" href="#resources" title="Resources">Resources</a></li>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#">Blog</a></li>
+						<li><a href="#">Help</a></li>
+						<li>
+							<button type="button" class="btn btn-success navbar-btn">Register</button>
+						</li>
 					</ul>
-
-					<br>
-
-					<!-- pill content -->
-					<!-- Tab: overview -->
-					<div class="tab-content">
-						<!-- overview panel -->
-						<div id="overview" class="tab-pane fade in active">
-
-							<div class="input-group" style="width: 70%;">
-								<input type="text" autofocus class="form-control" placeholder="Filter out...">
-								<span class="input-group-btn"><button class="btn btn-success" type="button">
-											<span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
-								</button>
-								</span>
-							</div>
-
-							<br>
-							<div class="row">
-								<div class="col-md-6">
-									<!-- weather-inside -->
-									<div class="weather-inside">
-										<div class="row">
-											<div class="col-md-6">
-												<!-- temp -->
-												<p>Temperature inside</p>
-												<p class="in-temp">
-													<sub>34</sub><sup class="in-degC">&#8451;</sup>
-												</p>
-											</div>
-											<div class="col-md-6">
-												<p>Humidity inside</p>
-												<p class="in-temp">
-													<sub>24</sub><sup class="in-degC">g/m<sup>3</sup></sup>
-												</p>
-											</div>
-										</div>
-										<!-- card-bottom -->
-										<div class="card-bottom">
-											<p class="text-muted">33 hours left</p>
-											<button type="button" class="btn btn-default">More</button>
-										</div>
-									</div>
-
-									<!-- water level -->
-									<div class="water-level">
-										<h3>Water availability</h3>
-										<div class="progress">
-											<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-												60%
-											</div>
-										</div>
-										<!-- card-bottom -->
-										<div class="card-bottom">
-											<p class="text-muted">33 hours left</p>
-											<button type="button" class="btn btn-info">Details</button>
-											<button type="button" class="btn btn-success">Fill now</button>
-										
-										</div>
-									</div>
-									
-									<!-- open and closed -->
-									<div class="doors">
-										<!-- col1 -->
-										<div class="col-md-6">
-											<h4>Doors open</h4>
-										</div>
-										<!-- col2 -->
-										<div class="col-md-6">
-											<h4>Windows open</h4>
-										</div>
-										
-										<!-- card-bottom -->
-										<div class="card-bottom">
-											<p class="text-muted">33 hours left</p>
-											<button type="button" class="btn btn-info">Details</button>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<!-- weather -->
-									<div class="weatherDotCom">
-										<p class="update-time">Weather updated 30 min ago</p>
-										<div class="row">
-											<div class="col-md-6">
-												<p class="temp">
-													<sub>34</sub><sup class="degC">&#8451;</sup>
-												</p>
-												<p class="feels">Feels like 35&deg;</p>
-												<hr>
-												<p class="w-key">Wind <span class="w-value">Calm, 5km/h W</span> </p>
-												<p class="w-key">UV index <span class="w-value">Low, 0</span> </p>
-												<p class="w-key">Pressure <span class="w-value">1011 mBar</span> </p>
-											</div>
-
-											<div class="col-md-6">
-												<p class="w-location">Karunagapplly</p>
-												<p class="w-date">6 April Monday </p>
-												<img src="/images/weather/partly-cloudy.png" alt="weather" class="w-img">
-												<p class="logicalText">Partly Cloudy</p>
-												<p class="w-key">Sunrise <span class="w-value">6:15 AM</span> </p>
-												<p class="w-key">Sunset <span class="w-value">6:33 PM</span> </p>
-
-											</div>
-										</div>
-
-									</div>
-									<!-- possibility of rain -->
-									<div class="weatherDotCom">
-										<p class="update-time">Weather updated 30 min ago</p>
-										<p class="temp">
-											<sub>90</sub><sup class="degC">%</sup> <span class="chance">chance of rain</span>
-										</p>
-									</div>
-
-
-								</div>
-							</div>
-							<!-- internet weather update area -->
-
-
-						</div>
-						<!-- overview -->
-
-						<!-- quick pane -->
-						<div id="quick" class="tab-pane fade">
-
-							<div class="panel panel-success">
-								<!-- panel heading -->
-								<div class="panel-heading">
-									<h3 class="panel-title">Quick Look</h3>
-								</div>
-								<!-- panel body -->
-								<div class="panel-body">
-									<div class="input-group">
-										<input type="text" autofocus class="form-control" placeholder="Start typing...">
-										<span class="input-group-btn"><button class="btn btn-success" type="button">
-											<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-										</button>
-										</span>
-									</div>
-									<br>
-								</div>
-								<!-- panel body -->
-							</div>
-						</div>
-						<!-- end-quick-pane -->
-
-						<!-- doors pane -->
-						<div id="doors" class="tab-pane fade">
-
-						</div>
-
-						<div id="appliances" class="tab-pane fade">
-							<!-- appliances pane -->
-						</div>
-
-						<div id="resources" class="tab-pane fade">
-							<!-- resources pane -->
-						</div>
-					</div>
 				</div>
-
-				<!-- log -->
-				<div class="col-md-3">
-					<div class="panel panel-warning">
-						<div class="panel-heading">
-							<h3 class="panel-title">Notifications</h3>
-						</div>
-						<div class="panel-body">
-							Panel content
-						</div>
-					</div>
-					<div class="panel panel-success">
-						<div class="panel-heading">
-							<h3 class="panel-title">Recent Log</h3>
-						</div>
-						<div class="panel-body">
-							Panel content
-						</div>
-					</div>
-					<div class="panel panel-success">
-						<div class="panel-body">
-							<strong>Number of users online :</strong> 2
-						</div>
-					</div>
-				</div>
-				<div class="col-md-1">md1</div>
+				<!-- /.navbar-collapse -->
 			</div>
+			<!-- /.container-fluid -->
+		</nav>
+		<!-- nav bar over -->
 
+		<!-- body starts here.. -->
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h1 class="os-300">Know your home</h1>
+				<p class="lead os-300">Status</p>
+			</div>
 		</div>
 
-		<% include ./partials/footer %>
-	</body>
+		<!-- quick status -->
+		<div class="row">
+			<div class="col-sm-3 col-md-3 col-lg-4"></div>
+
+			<!-- content goes here -->
+			<div class="col-sm-6 col-md-6 col-lg-4 col-xs-12">
+				<div class="alert alert-success text-center" role="alert"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span><strong> Sweet home!</strong> Everything goes fine, relax...</div>
+			</div>
+
+			<div class="col-sm-3 col-md-3 col-lg-4"></div>
+		</div>
+
+		<!-- device status -->
+		<div class="row" style="margin-top: 15px;">
+			<!-- content goes here -->
+			<div class="col-md-1"></div>
+			<div class="col-md-7">
+
+				<!-- search box -->
+				<div class="input-group" style="width:50%;">
+					<input type="text" autofocus class="form-control" placeholder="Search...">
+					<span class="input-group-btn"><button class="btn btn-success" type="button">
+							<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+					</button>
+					</span>
+				</div>
+
+				<br>
+
+				<!-- pills -->
+				<ul class="nav nav-pills green">
+					<li class="active"><a data-toggle="pill" href="#overview" title="Overview">Overview</a></li>
+					<li><a data-toggle="pill" href="#quick" title="Quick">Quick</a></li>
+					<li><a data-toggle="pill" href="#doors" title="Doors and windows">Doors and windows</a></li>
+					<li><a data-toggle="pill" href="#appliances" title="Appliances">Appliances</a></li>
+					<li><a data-toggle="pill" href="#resources" title="Resources">Resources</a></li>
+				</ul>
+
+				<br>
+
+				<!-- pill content -->
+				<!-- Tab: overview -->
+				<div class="tab-content">
+					<!-- overview panel -->
+					<div id="overview" class="tab-pane fade in active">
+
+						<div class="input-group" style="width: 70%;">
+							<input type="text" autofocus class="form-control" placeholder="Filter out...">
+							<span class="input-group-btn"><button class="btn btn-success" type="button">
+											<span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
+							</button>
+							</span>
+						</div>
+
+						<br>
+						<div class="row">
+							<div class="col-md-6">
+								
+								<!-- card-green WEATHER-->
+								<div class="card card-green">
+									<p class="card-update-time">Card is upto date</p>
+									<div class="row">
+										<div class="col-md-6">
+											<h3>Inside</h3>
+											<div class="card-content">
+												<div class="card-highlight">
+													<p class="in-temp">
+														<sub>34</sub><sup class="in-degC">&#8451;</sup>
+													</p>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<h3>Outside</h3>
+											<div class="card-content">
+												<div class="card-highlight">
+													<p class="in-temp">
+														<sub>34</sub><sup class="in-degC">&#8451;</sup>
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="card-bottom">
+										<p>Windows are open.</p>
+										<button type="button" class="btn btn-default">Manage</button>
+									</div>
+								</div>
+
+
+								<!-- weather-inside -->
+								<div class="weather-inside">
+									<div class="row">
+										<div class="col-md-6">
+											<!-- temp -->
+											<p>Temperature inside</p>
+											<p class="in-temp">
+												<sub>34</sub><sup class="in-degC">&#8451;</sup>
+											</p>
+										</div>
+										<div class="col-md-6">
+											<p>Humidity inside</p>
+											<p class="in-temp">
+												<sub>24</sub><sup class="in-degC">g/m<sup>3</sup></sup>
+											</p>
+										</div>
+									</div>
+									<!-- card-bottom -->
+									<div class="card-bottom">
+										<p class="text-muted">33 hours left</p>
+										<button type="button" class="btn btn-default">More</button>
+									</div>
+								</div>
+
+								<!-- water level -->
+								<div class="water-level">
+									<h3>Water availability</h3>
+									<div class="progress">
+										<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+											60%
+										</div>
+									</div>
+									<!-- card-bottom -->
+									<div class="card-bottom">
+										<p class="text-muted">33 hours left</p>
+										<button type="button" class="btn btn-info">Details</button>
+										<button type="button" class="btn btn-success">Fill now</button>
+
+									</div>
+								</div>
+
+								<!-- open and closed -->
+								<div class="doors">
+									<!-- col1 -->
+									<!-- col-md-6 is styled in common.css -->
+									<div class="col-md-6">
+										<h4>Doors open</h4>
+										<div id="echart_div" class="overview-card-charts">Loading...</div>
+									</div>
+									<!-- col2 -->
+									<!-- col-md-6 is styled in common.css -->
+									<div class="col-md-6">
+										<h4>Windows open</h4>
+										<div id="echart_div2" class="overview-card-charts">Loading...</div>
+									</div>
+
+									<!-- card-bottom -->
+									<div class="card-bottom">
+										<p style="color:#FFF;">Windows are open. Let some air flows in..</p>
+										<button type="button" class="btn btn-default">Manage</button>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<!-- weather -->
+								<div class="weatherDotCom">
+									<p class="update-time">Weather updated 30 min ago</p>
+									<div class="row">
+										<div class="col-md-6">
+											<p class="temp">
+												<sub>34</sub><sup class="degC">&#8451;</sup>
+											</p>
+											<p class="feels">Feels like 35&deg;</p>
+											<hr>
+											<p class="w-key">Wind <span class="w-value">Calm, 5km/h W</span> </p>
+											<p class="w-key">UV index <span class="w-value">Low, 0</span> </p>
+											<p class="w-key">Pressure <span class="w-value">1011 mBar</span> </p>
+										</div>
+
+										<div class="col-md-6">
+											<p class="w-location">Karunagapplly</p>
+											<p class="w-date">6 April Monday </p>
+											<img src="/images/weather/partly-cloudy.png" alt="weather" class="w-img">
+											<p class="logicalText">Partly Cloudy</p>
+											<p class="w-key">Sunrise <span class="w-value">6:15 AM</span> </p>
+											<p class="w-key">Sunset <span class="w-value">6:33 PM</span> </p>
+
+										</div>
+									</div>
+
+								</div>
+								<!-- possibility of rain -->
+								<div class="weatherDotCom">
+									<p class="update-time">Weather updated 30 min ago</p>
+									<p class="temp">
+										<sub>90</sub><sup class="degC">%</sup> <span class="chance">chance of rain</span>
+									</p>
+								</div>
+
+								<!-- card-design -->
+								<div class="card">
+									<p class="card-update-time">Weather updated 30 min ago</p>
+									<h3>Heading</h3>
+									<div class="card-content">
+										<p class="temp">
+											<span class="card-highlight">
+												<sub>90</sub><sup class="degC">%</sup>
+											</span>
+											<span class="chance">chance of rain</span>
+										</p>
+									</div>
+									<div class="card-bottom">
+										<p>Windows are open.</p>
+										<button type="button" class="btn btn-default">Manage</button>
+									</div>
+								</div>
+								<!-- card-design -->
+								<div class="card card-blue">
+									<p class="card-update-time">Weather updated 30 min ago</p>
+									<h3>Heading</h3>
+									<div class="card-content">
+										<p class="temp">
+											<span class="card-highlight">
+												<sub>90</sub><sup class="degC">%</sup>
+											</span>
+											<span class="chance">chance of rain</span>
+										</p>
+									</div>
+									<div class="card-bottom">
+										<p>Windows are open.</p>
+										<button type="button" class="btn btn-default">Manage</button>
+									</div>
+								</div>
+
+								<!-- card-green -->
+								<div class="card card-green">
+									<p class="card-update-time">Weather updated 30 min ago</p>
+									<div class="row">
+										<div class="col-md-6">
+											<h3>Doors closed</h3>
+											<div class="card-content">
+												<!-- graph -->
+												<div id="chart_div" class="overview-card-charts">Loading...</div>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<h3>Doors closed</h3>
+											<div class="card-content">
+												<!-- graph -->
+												<div id="chart_div2" class="overview-card-charts">Loading...</div>
+											</div>
+										</div>
+									</div>
+									<div class="card-bottom">
+										<p>Windows are open.</p>
+										<button type="button" class="btn btn-default">Manage</button>
+									</div>
+								</div>
+
+								<!-- yellow-card -->
+								<div class="card card-yellow">
+									<p class="card-update-time">Weather updated 30 min ago</p>
+									<h3>Heading</h3>
+									<div class="card-content">
+										<p class="temp">
+											<span class="card-highlight">
+												<sub>90</sub><sup class="degC">%</sup>
+											</span>
+											<span class="chance">chance of rain</span>
+										</p>
+									</div>
+									<div class="card-bottom">
+										<p>Windows are open.</p>
+										<button type="button" class="btn btn-default">Manage</button>
+									</div>
+								</div>
+
+								<!-- red-card -->
+								<div class="card card-red">
+									<p class="card-update-time">Weather updated 30 min ago</p>
+									<h3>Heading</h3>
+									<div class="card-content">
+										<p class="temp">
+											<span class="card-highlight">
+												<sub>90</sub><sup class="degC">%</sup>
+											</span>
+											<span class="chance">chance of rain</span>
+										</p>
+									</div>
+									<div class="card-bottom">
+										<p>Windows are open.</p>
+										<button type="button" class="btn btn-default">Manage</button>
+									</div>
+								</div>
+
+								<!-- card-green WEATHER-->
+								<div class="card card-green">
+									<p class="card-update-time">Card is upto date</p>
+									<div class="row">
+										<div class="col-md-6">
+											<h3>Inside</h3>
+											<div class="card-content">
+												<div class="card-highlight">
+													<p class="in-temp">
+														<sub>34</sub><sup class="in-degC">&#8451;</sup>
+													</p>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<h3>Outside</h3>
+											<div class="card-content">
+												<div class="card-highlight">
+													<p class="in-temp">
+														<sub>34</sub><sup class="in-degC">&#8451;</sup>
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="card-bottom">
+										<p>Windows are open.</p>
+										<button type="button" class="btn btn-default">Manage</button>
+									</div>
+								</div>
+
+
+
+							</div>
+						</div>
+						<!-- internet weather update area -->
+
+
+					</div>
+					<!-- overview -->
+
+					<!-- quick pane -->
+					<div id="quick" class="tab-pane fade">
+
+						<div class="panel panel-success">
+							<!-- panel heading -->
+							<div class="panel-heading">
+								<h3 class="panel-title">Quick Look</h3>
+							</div>
+							<!-- panel body -->
+							<div class="panel-body">
+								<div class="input-group">
+									<input type="text" autofocus class="form-control" placeholder="Start typing...">
+									<span class="input-group-btn"><button class="btn btn-success" type="button">
+											<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+									</button>
+									</span>
+								</div>
+								<br>
+							</div>
+							<!-- panel body -->
+						</div>
+					</div>
+					<!-- end-quick-pane -->
+
+					<!-- doors pane -->
+					<div id="doors" class="tab-pane fade">
+
+					</div>
+
+					<div id="appliances" class="tab-pane fade">
+						<!-- appliances pane -->
+					</div>
+
+					<div id="resources" class="tab-pane fade">
+						<!-- resources pane -->
+					</div>
+				</div>
+			</div>
+
+			<!-- log -->
+			<div class="col-md-3">
+				<div class="panel panel-warning">
+					<div class="panel-heading">
+						<h3 class="panel-title">Notifications</h3>
+					</div>
+					<div class="panel-body">
+						Panel content
+					</div>
+				</div>
+				<div class="panel panel-success">
+					<div class="panel-heading">
+						<h3 class="panel-title">Recent Log</h3>
+					</div>
+					<div class="panel-body">
+						Panel content
+					</div>
+				</div>
+				<div class="panel panel-success">
+					<div class="panel-body">
+						<strong>Number of users online :</strong> 2
+					</div>
+				</div>
+			</div>
+			<div class="col-md-1">md1</div>
+		</div>
+
+	</div>
+
+	<% include ./partials/footer %>
+</body>
 
 </html>

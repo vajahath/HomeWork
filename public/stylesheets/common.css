@@ -1,3 +1,119 @@
+
+.card{
+	background-color:#FAFAFA;
+	box-shadow:1px 1px 10px #777777;
+	border-radius:2px;
+	margin-top:10px;
+	margin-bottom:15px;
+	padding:7px 15px 7px 15px;
+	transition:all ease-in-out .1s;
+}
+.card:hover{
+	box-shadow:1px 1px 30px #777777;
+	transition:all ease-in-out .1s;
+}
+.card .card-update-time{
+	font-size:80%;
+	display:inline-block;
+	color:#989898;
+}
+.card h3{
+	font-size:20px;
+	margin-top:-5px;
+	color:#FF6B6B;
+}
+.card .card-content .card-highlight{
+	color:#47B1F4;
+	/* color:#FEB44B; */
+}
+.card-bottom{
+	text-align:right;
+	margin-top:2px;
+}
+.card-bottom p{
+	display:inline-block;
+	color:#455A64;
+}
+.card-bottom button{
+	display:inline-block;
+	margin-left: 6px;
+}
+/*-------blue-card--------*/
+.card-blue{
+	background-color:#49B5FA;
+	color:#FFF;
+}
+.card-blue .card-update-time{
+	color:#B9E4FF;
+}
+.card-blue h3{
+	color:white;
+}
+.card-blue .card-bottom p{
+	color:#C5E9FF;
+}
+.card-blue .card-content .card-highlight{
+	/* color:#F7FF60; */
+	color:#FFF;
+}
+
+/*------green-card-------*/
+.card-green{
+	background-color:#1CB689;
+	color:#FFF;
+}
+.card-green .card-update-time{
+	color:#39FFC6;
+}
+.card-green h3{
+	color:white;
+}
+.card-green .card-bottom p{
+	color:#68FFD3;
+}
+.card-green .card-content .card-highlight{
+	/* color:#F7FF60; */
+	color:#FFF;
+}
+
+/*-----yellow-card-------*/
+.card-yellow{
+	background-color:#FFB74D;
+	color:#FFF;
+}
+.card-yellow .card-update-time{
+	color:#FFE2B6;
+}
+.card-yellow h3{
+	color:white;
+}
+.card-yellow .card-bottom p{
+	color:#FFE3BA;
+}
+.card-yellow .card-content .card-highlight{
+	/* color:#F7FF60; */
+	color:#FFF;
+}
+
+/*-----red-card-------*/
+.card-red{
+	background-color:#FF4081;
+	color:#FFF;
+}
+.card-red .card-update-time{
+	color:#FFC6D9;
+}
+.card-red h3{
+	color:white;
+}
+.card-red .card-bottom p{
+	color:#FFB1CB;
+}
+.card-red .card-content .card-highlight{
+	/* color:#F7FF60; */
+	color:#FFF;
+}
+
 .weatherDotCom{
 	background-color:#1CB689;
 	border-radius:8px;
@@ -70,13 +186,16 @@
 	font-size:28%;
 }
 
-.card-bottom{
-	text-align:right;
+.doors{
+	margin-top: 10px;
+	color:#FFF;
+	background-color:#1CB689;
+	border-radius:10px;
+	padding:10px;
+	margin-bottom: 10px;
 }
-.card-bottom p{
-	display:inline-block;
-}
-.card-bottom button{
-	display:inline-block;
-	margin-left: 6px;
+.overview-card-charts{
+
+	width:120px;
+	height:120px;
 }
