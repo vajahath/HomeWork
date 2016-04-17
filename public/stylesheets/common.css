@@ -5,7 +5,7 @@
 	border-radius:2px;
 	margin-top:10px;
 	margin-bottom:15px;
-	padding:7px 15px 7px 15px;
+	padding:15px 15px 15px 15px;
 	transition:all ease-in-out .1s;
 }
 .card:hover{
@@ -21,6 +21,9 @@
 	font-size:20px;
 	margin-top:-5px;
 	color:#FF6B6B;
+}
+.card .card-content .card-center{
+	text-align: center;
 }
 .card .card-content .card-highlight{
 	color:#47B1F4;
@@ -196,6 +199,7 @@
 }
 .overview-card-charts{
 
-	width:120px;
-	height:120px;
+	width:135px;
+	height:135px;
 }
+

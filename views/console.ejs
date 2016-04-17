@@ -122,31 +122,61 @@
 
 						<br>
 						<div class="row">
+							<!-- col-1 -->
 							<div class="col-md-6">
-								
-								<!-- card-green WEATHER-->
-								<div class="card card-green">
-									<p class="card-update-time">Card is upto date</p>
-									<div class="row">
-										<div class="col-md-6">
-											<h3>Inside</h3>
+
+								<!-- multiple cards -->
+								<div class="row">
+									<!-- card 1 -->
+									<div class="col-md-6">
+										<div class="card card-green">
+											<p class="card-update-time">Showing temperature inside</p>
+
 											<div class="card-content">
-												<div class="card-highlight">
-													<p class="in-temp">
-														<sub>34</sub><sup class="in-degC">&#8451;</sup>
-													</p>
+												<h3>Inside</h3>
+												<div class="card-content">
+													<div class="card-center">
+														<p class="in-temp">
+															<sub>34</sub><sup class="in-degC">&#8451;</sup>
+														</p>
+													</div>
 												</div>
 											</div>
 										</div>
-										<div class="col-md-6">
-											<h3>Outside</h3>
+									</div>
+									<!-- card 2 -->
+									<div class="col-md-6">
+										<div class="card card-green">
+											<p class="card-update-time">Showing temperature outside</p>
+
 											<div class="card-content">
-												<div class="card-highlight">
-													<p class="in-temp">
-														<sub>34</sub><sup class="in-degC">&#8451;</sup>
-													</p>
+												<h3>Outside</h3>
+												<div class="card-content">
+													<div class="card-center">
+														<p class="in-temp">
+															<sub>38</sub><sup class="in-degC">&#8451;</sup>
+														</p>
+													</div>
 												</div>
 											</div>
+										</div>
+									</div>
+								</div>
+								
+
+								<!-- water level -->
+								<!-- card-blue -->
+								<div class="card card-blue">
+									<p class="card-update-time">Updated 1 min ago</p>
+
+									<div class="row">
+										<div class="col-md-6">
+											<h3>Water level</h3>
+											<div id="chart_div3" class="overview-card-charts">Loading...</div>
+										</div>
+										<div class="col-md-6">
+											<p style="font-size: 35px;">23 hours left</p>
+											<p>statistics based on your average usage.</p>
 										</div>
 									</div>
 									<div class="card-bottom">
@@ -155,32 +185,6 @@
 									</div>
 								</div>
 
-
-								<!-- weather-inside -->
-								<div class="weather-inside">
-									<div class="row">
-										<div class="col-md-6">
-											<!-- temp -->
-											<p>Temperature inside</p>
-											<p class="in-temp">
-												<sub>34</sub><sup class="in-degC">&#8451;</sup>
-											</p>
-										</div>
-										<div class="col-md-6">
-											<p>Humidity inside</p>
-											<p class="in-temp">
-												<sub>24</sub><sup class="in-degC">g/m<sup>3</sup></sup>
-											</p>
-										</div>
-									</div>
-									<!-- card-bottom -->
-									<div class="card-bottom">
-										<p class="text-muted">33 hours left</p>
-										<button type="button" class="btn btn-default">More</button>
-									</div>
-								</div>
-
-								<!-- water level -->
 								<div class="water-level">
 									<h3>Water availability</h3>
 									<div class="progress">
@@ -272,7 +276,7 @@
 										<button type="button" class="btn btn-default">Manage</button>
 									</div>
 								</div>
-								<!-- card-design -->
+								<!-- card-blue -->
 								<div class="card card-blue">
 									<p class="card-update-time">Weather updated 30 min ago</p>
 									<h3>Heading</h3>
@@ -302,7 +306,7 @@
 											</div>
 										</div>
 										<div class="col-md-6">
-											<h3>Doors closed</h3>
+											<h3>Windows closed</h3>
 											<div class="card-content">
 												<!-- graph -->
 												<div id="chart_div2" class="overview-card-charts">Loading...</div>
