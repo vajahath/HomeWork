@@ -1,7 +1,7 @@
 
 .card{
 	background-color:#FAFAFA;
-	box-shadow:1px 1px 10px #777777;
+	box-shadow:2px 2px 7px #505050;
 	border-radius:2px;
 	margin-top:10px;
 	margin-bottom:15px;
@@ -9,7 +9,7 @@
 	transition:all ease-in-out .1s;
 }
 .card:hover{
-	box-shadow:1px 1px 30px #777777;
+	box-shadow:2px 2px 25px #505050;
 	transition:all ease-in-out .1s;
 }
 .card .card-update-time{
@@ -27,7 +27,6 @@
 }
 .card .card-content .card-highlight{
 	color:#47B1F4;
-	/* color:#FEB44B; */
 }
 .card-bottom{
 	text-align:right;
@@ -35,11 +34,14 @@
 }
 .card-bottom p{
 	display:inline-block;
-	color:#455A64;
+	color:#535353;
 }
 .card-bottom button{
 	display:inline-block;
 	margin-left: 6px;
+}
+.card .form-control{
+	letter-spacing:2px;
 }
 /*-------blue-card--------*/
 .card-blue{
@@ -59,7 +61,25 @@
 	/* color:#F7FF60; */
 	color:#FFF;
 }
-
+.card-blue .form-control{
+	background-color:#49B5FA;
+	color:#FFF;
+	border-color:#87D1FF;
+}
+.card-blue ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:#87D1FF;
+}
+.card-blue :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:#87D1FF;
+   opacity:1;
+}
+.card-blue ::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:#87D1FF;
+   opacity:1;
+}
+.card-blue :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:#87D1FF;
+}
 /*------green-card-------*/
 .card-green{
 	background-color:#1CB689;
@@ -116,18 +136,7 @@
 	/* color:#F7FF60; */
 	color:#FFF;
 }
-
-.weatherDotCom{
-	background-color:#1CB689;
-	border-radius:8px;
-	padding:8px;
-	color:#FFF;
-	margin-bottom: 10px;
-}
-.update-time{
-	font-size:80%;
-	color:#B7FFEA;
-}
+/* -------temperature and degree celcious ----------- */
 .temp{
 	margin-top:-60px;
 	font-size:700%;
@@ -135,52 +144,8 @@
 .degC{
 	font-size:28%;
 }
-.feels{
-	margin-top:-20px;
-}
-.w-location{
-	text-align:right;
-	margin-top: -25px;
-}
-.w-date{
-	text-align:right;
-	margin-top:-10px;
-}
-.w-img{
-	width:100px;
-	height:100px;
-}
-.logicalText{
-	color:yellow;
-}
-.w-key{
-	font-weight:700;
-}
-.w-value{
-	font-weight:400;
-}
-.chance{
-	font-size:15px;
-}
 
-
-.water-level{
-	border:solid thin #1CB588;
-	border-radius:8px;
-	padding:10px;
-}
-
-.water-level h3{
-	color:#1cb588;
-}
-
-.weather-inside{
-	background-color:#5BC0DE;
-	border-radius:10px;
-	padding:10px;
-	text-align:center;
-	margin-bottom: 10px;
-}
+/* inside temp and degC */
 .in-temp{
 	margin-top:-40px;
 	font-size:500%;
@@ -189,14 +154,7 @@
 	font-size:28%;
 }
 
-.doors{
-	margin-top: 10px;
-	color:#FFF;
-	background-color:#1CB689;
-	border-radius:10px;
-	padding:10px;
-	margin-bottom: 10px;
-}
+/* style for charts in overview cards */
 .overview-card-charts{
 
 	width:135px;

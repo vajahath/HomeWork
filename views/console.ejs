@@ -5,27 +5,16 @@
 	<!-- heads -->
 	<% include ./partials/head %>
 
-		<!-- handle google charts -->
-		<% include ./partials/charts %>
+	<!-- handle google charts -->
+	<% include ./partials/charts %>
 
 </head>
 
 <body>
 	<style>
-	.green li a:link,
-	.green li a:visited {
-		color: #2E9476;
-	}
-	
-	.green .active a,
-	.green .active a:active {
-		background-color: #2E9476 !important;
-		color: #FFF !important;
-	}
-	
-	.form-control:focus {
+	/* .form-control:focus {
 		border-color: #449D44;
-	}
+	} */
 	</style>
 
 	<div class="container-fluid main-content">
@@ -162,7 +151,7 @@
 										</div>
 									</div>
 								</div>
-								
+
 
 								<!-- water level -->
 								<!-- card-blue -->
@@ -185,45 +174,131 @@
 									</div>
 								</div>
 
-								<div class="water-level">
-									<h3>Water availability</h3>
-									<div class="progress">
-										<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-											60%
+								<!-- water level -->
+								<!-- card-blue -->
+								<div class="card card-red">
+									<p class="card-update-time">Status of main devices.</p>
+
+									<div class="row">
+										<div class="col-md-4">
+											<h3>A/c</h3>
+										</div>
+										<div class="col-md-4">
+											<h3>Washing Machine</h3>
+
+											
+										</div>
+										<div class="col-md-4">
+											<h3>Refrigerator</h3>
+											
 										</div>
 									</div>
-									<!-- card-bottom -->
 									<div class="card-bottom">
-										<p class="text-muted">33 hours left</p>
-										<button type="button" class="btn btn-info">Details</button>
-										<button type="button" class="btn btn-success">Fill now</button>
-
-									</div>
-								</div>
-
-								<!-- open and closed -->
-								<div class="doors">
-									<!-- col1 -->
-									<!-- col-md-6 is styled in common.css -->
-									<div class="col-md-6">
-										<h4>Doors open</h4>
-										<div id="echart_div" class="overview-card-charts">Loading...</div>
-									</div>
-									<!-- col2 -->
-									<!-- col-md-6 is styled in common.css -->
-									<div class="col-md-6">
-										<h4>Windows open</h4>
-										<div id="echart_div2" class="overview-card-charts">Loading...</div>
-									</div>
-
-									<!-- card-bottom -->
-									<div class="card-bottom">
-										<p style="color:#FFF;">Windows are open. Let some air flows in..</p>
+										<p>Windows are open.</p>
 										<button type="button" class="btn btn-default">Manage</button>
 									</div>
 								</div>
+
 							</div>
 							<div class="col-md-6">
+
+								<!-- doors closed -->
+								<div class="card card-red">
+									<p class="card-update-time">Status of doors and windows</p>
+									<div class="row">
+										<div class="col-md-6">
+											<h3>Doors closed</h3>
+											<div class="card-content">
+												<p style="font-size: 40px;">2 <span style="color:#FFA0C1">/3</span></p>
+												<p>Normal temerature inside.</p>
+												<p>A/c is off.</p>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<h3>Windows closed</h3>
+											<div class="card-content">
+												<!-- graph -->
+												<div id="chart_div4" class="overview-card-charts">Loading...</div>
+											</div>
+										</div>
+									</div>
+									<div class="card-bottom">
+										<p>Windows are open.</p>
+										<button type="button" class="btn btn-default">Manage</button>
+									</div>
+								</div>
+
+								<div class="row">
+									<!-- possibility of rain -->
+									<div class="col-md-6">
+										<div class="card">
+											<p class="card-update-time">Data from weather.com</p>
+											<h3>No rain today</h3>
+											<div class="card-content">
+												<p class="temp" style="display:inline-block;">
+													<span class="card-highlight"><sub>30</sub><sup class="degC">%</sup></span>
+												</p>
+												<p style="display:inline-block;"> chance of rain</p>
+											</div>
+										</div>
+										<!-- inverter status -->
+										<div class="card card-green">
+											<p class="card-update-time">Inverter Status</p>
+											<h3>Inverter</h3>
+											<div class="card-content">
+												<p class="temp" style="display:inline-block;">
+													<span class="card-highlight"><sub>100</sub><sup class="degC">%</sup></span>
+												</p>
+												<p style="text-align: center;">Charging</p>
+											</div>
+										</div>
+
+										<!-- inverter status -->
+										<div class="card card-blue">
+											<p class="card-update-time"></p>
+											<h3>Inverter</h3>
+											<div class="card-content">
+												<div class="form-group">
+													<textarea class="form-control" placeholder="Start typing..." rows="3"></textarea>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- connected devices -->
+									<div class="col-md-6">
+										<div class="card card-yellow">
+											<p class="card-update-time">Only showing the status of connected devices.</p>
+											<h3>Devices ON</h3>
+											<div class="card-content">
+												<!-- graph -->
+												<div id="chart_div5" class="overview-card-charts">Loading...</div>
+												<p>The less the usage, the more you save.</p>
+											</div>
+											<div class="card-bottom">
+												<p>Normal usage</p>
+												<button type="button" class="btn btn-default">Manage</button>
+											</div>
+										</div>
+
+										<!-- feedback -->
+										<div class="card">
+											<p class="card-update-time">Tell us what's in your mind...</p>
+											<h3>Feedback</h3>
+											<div class="card-content">
+												<div class="form-group">
+													<textarea class="form-control" placeholder="Start typing..." rows="3"></textarea>
+												</div>
+											</div>
+											<div class="card-bottom">
+												<p>We value your words</p>
+												<button type="button" class="btn btn-info">Send</button>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
 								<!-- weather -->
 								<div class="weatherDotCom">
 									<p class="update-time">Weather updated 30 min ago</p>

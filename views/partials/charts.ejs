@@ -54,6 +54,34 @@ function drawChart() {
 		'colors': ['#FFF', '#70C8FF']
 	};
 
+	// red color
+	var red_options = {
+		// 'title': 'How Much Pizza I Ate Last Night',
+		'backgroundColor': '#FF4081',
+		'chartArea': {
+			'width': '85%',
+			'height': '85%'
+		},
+		'pieSliceBorderColor': '#FF4081',
+		'legend': 'none',
+		'pieHole': 0.4,
+		'colors': ['#FFF', '#FF70A1']
+	};
+
+	// yellow color
+	var yellow_options = {
+		// 'title': 'How Much Pizza I Ate Last Night',
+		'backgroundColor': '#FFB74D',
+		'chartArea': {
+			'width': '85%',
+			'height': '85%'
+		},
+		'pieSliceBorderColor': '#FFB74D',
+		'legend': 'none',
+		'pieHole': 0.4,
+		'colors': ['#FFF', '#FFC570']
+	};
+
 	// Instantiate and draw our chart, passing in some options.
 	var chart1 = new google.visualization.PieChart(document.getElementById('chart_div'));
 	chart1.draw(data, green_options);
@@ -63,5 +91,11 @@ function drawChart() {
 
 	var chart3 = new google.visualization.PieChart(document.getElementById('chart_div3'));
 	chart3.draw(data, blue_options);
+
+	var chart4 = new google.visualization.PieChart(document.getElementById('chart_div4'));
+	chart4.draw(data, red_options);
+
+	var chart5 = new google.visualization.PieChart(document.getElementById('chart_div5'));
+	chart5.draw(data, yellow_options);
 }
 </script>
