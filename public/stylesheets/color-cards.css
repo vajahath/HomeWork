@@ -1,0 +1,242 @@
+/* Color-Cards Librery */
+
+
+/* ========================= 
+
+	use with Bootstrap.
+	example card
+	============
+
+	<div class="card card-blue">
+		<p class="card-update-time">Updated 1 min ago</p>
+
+		<div class="row">
+			<div class="col-md-6">
+				<h3>Water level</h3>
+				<div id="chart_div3" class="overview-card-charts">Loading...</div>
+			</div>
+			<div class="col-md-6">
+				<p style="font-size: 35px;">23 hours left</p>
+				<p>statistics based on your average usage.</p>
+			</div>
+		</div>
+		<div class="card-bottom">
+			<p>Windows are open.</p>
+			<button type="button" class="btn btn-default">Manage</button>
+		</div>
+	</div>
+
+*/
+
+.card {
+	background-color: #FAFAFA;
+	box-shadow: 2px 2px 7px #505050;
+	border-radius: 2px;
+	margin-top: 10px;
+	margin-bottom: 15px;
+	padding: 15px 15px 15px 15px;
+	transition: all ease-in-out .1s;
+}
+
+.card:hover {
+	box-shadow: 2px 2px 25px #505050;
+	transition: all ease-in-out .1s;
+}
+
+.card .card-update-time {
+	font-size: 80%;
+	display: inline-block;
+	color: #989898;
+}
+
+.card h3 {
+	font-size: 20px;
+	margin-top: -5px;
+	color: #FF6B6B;
+}
+
+.card .card-content .card-center {
+	text-align: center;
+}
+
+.card .card-content .card-highlight {
+	color: #47B1F4;
+}
+
+.card-bottom {
+	text-align: right;
+	margin-top: 2px;
+}
+
+.card-bottom p {
+	display: inline-block;
+	color: #535353;
+}
+
+.card-bottom button {
+	display: inline-block;
+	margin-left: 6px;
+}
+
+.card .form-control {
+	letter-spacing: 2px;
+}
+
+
+/*-------blue-card--------*/
+
+.card-blue {
+	background-color: #49B5FA;
+	color: #FFF;
+}
+
+.card-blue .card-update-time {
+	color: #B9E4FF;
+}
+
+.card-blue h3 {
+	color: white;
+}
+
+.card-blue .card-bottom p {
+	color: #C5E9FF;
+}
+
+.card-blue .card-content .card-highlight {
+	/* color:#F7FF60; */
+	color: #FFF;
+}
+
+.card-blue .form-control {
+	background-color: #49B5FA;
+	color: #FFF;
+	border-color: #87D1FF;
+}
+
+.card-blue ::-webkit-input-placeholder {
+	/* WebKit, Blink, Edge */
+	color: #87D1FF;
+}
+
+.card-blue:-moz-placeholder {
+	/* Mozilla Firefox 4 to 18 */
+	color: #87D1FF;
+	opacity: 1;
+}
+
+.card-blue::-moz-placeholder {
+	/* Mozilla Firefox 19+ */
+	color: #87D1FF;
+	opacity: 1;
+}
+
+.card-blue:-ms-input-placeholder {
+	/* Internet Explorer 10-11 */
+	color: #87D1FF;
+}
+
+
+/*------green-card-------*/
+
+.card-green {
+	background-color: #1CB689;
+	color: #FFF;
+}
+
+.card-green .card-update-time {
+	color: #39FFC6;
+}
+
+.card-green h3 {
+	color: white;
+}
+
+.card-green .card-bottom p {
+	color: #68FFD3;
+}
+
+.card-green .card-content .card-highlight {
+	/* color:#F7FF60; */
+	color: #FFF;
+}
+
+
+/*-----yellow-card-------*/
+
+.card-yellow {
+	background-color: #FFB74D;
+	color: #FFF;
+}
+
+.card-yellow .card-update-time {
+	color: #FFE2B6;
+}
+
+.card-yellow h3 {
+	color: white;
+}
+
+.card-yellow .card-bottom p {
+	color: #FFE3BA;
+}
+
+.card-yellow .card-content .card-highlight {
+	/* color:#F7FF60; */
+	color: #FFF;
+}
+
+
+/*-----red-card-------*/
+
+.card-red {
+	background-color: #FF4081;
+	color: #FFF;
+}
+
+.card-red .card-update-time {
+	color: #FFC6D9;
+}
+
+.card-red h3 {
+	color: white;
+}
+
+.card-red .card-bottom p {
+	color: #FFB1CB;
+}
+
+.card-red .card-content .card-highlight {
+	/* color:#F7FF60; */
+	color: #FFF;
+}
+
+
+/* -------temperature and degree celcious ----------- */
+
+.temp {
+	margin-top: -60px;
+	font-size: 700%;
+}
+
+.degC {
+	font-size: 28%;
+}
+
+
+/* inside temp and degC */
+
+.in-temp {
+	margin-top: -40px;
+	font-size: 500%;
+}
+
+.in-degC {
+	font-size: 28%;
+}
+
+
+/* style for charts in overview cards */
+.overview-card-charts {
+	width: 135px;
+	height: 135px;
+}
