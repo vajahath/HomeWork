@@ -5,7 +5,9 @@ var router = express.Router();
 
 
 router.get('/', function(req, res) {
-	res.render("pi_test", {});
+	res.render("pi_test", {
+		title:"testing in pi"
+	});
 	console.log("testing in pi");
 	//To test the created functions
 
