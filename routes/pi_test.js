@@ -33,8 +33,7 @@ router.get('/', function(req, res) {
 		else console.log("error in deviceOn function");
 	});
 	deviceStatus("fan", function(status) {
-		console.log("status of fan has been changed to,"
-			status);
+		console.log("status of fan has been changed to ", status);
 	});
 });
 
