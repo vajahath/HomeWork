@@ -5,7 +5,7 @@ var router = express.Router();
 
 
 router.get('/', function(req, res) {
-	res.send("testing in rp...");
+	res.render("pi_test", {});
 	console.log("testing in pi");
 	//To test the created functions
 
@@ -34,7 +34,7 @@ router.get('/', function(req, res) {
 	});
 	deviceStatus("fan", function(status) {
 		console.log("status of fan has been changed to,"
-			status);
+			status_test);
 	});
 });
 
@@ -45,7 +45,7 @@ router.get('/xxx', function(req, res) {
 // function for getting status of devices
 function deviceStatus(device, callback) {
 	var id = device_id_mapping.device;
-	device_id = new Gpio(id, out);
+	device_id = new Gpio(id, 'out');
 	var function_status = "OK";
 	var status = {
 		"pin_state": device_id.readSync(),
@@ -58,7 +58,7 @@ function deviceStatus(device, callback) {
 // function to on a device
 function deviceOn(device, callback) {
 	var id = device_id_mapping.device;
-	var device_id = new Gpio(id, out);
+	var device_id = new Gpio(id, 'out');
 	var function_status = "OK";
 	device_id.writeSync(1);
 	var status = {
@@ -70,7 +70,7 @@ function deviceOn(device, callback) {
 // function to off a device
 function deviceOff(device) {
 	var id = device_id_mapping.device;
-	var device_id = new Gpio(id, out);
+	var device_id = new Gpio(id, 'out');
 	var function_status = "OK";
 	device_id.writeSync(0);
 	var status = {
