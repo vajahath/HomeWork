@@ -8,8 +8,16 @@ router.get('/', function(req, res) {
 	res.send("testing in rp...");
 	console.log("testing in pi");
 	//To test the created functions
-	deviceOn("fan");
-	deviceOn("bulb");
+
+	deviceOn("fan", function(status) {
+		if (status.status == "OK") console.log("bulb turned on");
+		else console.log("error in deviceOn function");
+	});
+
+	deviceOn("bulb", function(status) {
+		if (status.status == "OK") console.log("fan is turned on");
+		else console.log("error in deviceOn function");
+	});
 
 	deviceStatus("fan", function(status) {
 		console.log(status);
@@ -20,7 +28,10 @@ router.get('/', function(req, res) {
 	deviceStatus("ac", function(status) {
 		console.log(status);
 	});
-	deviceOff("fan");
+	deviceOff("fan", function(status) {
+		if (status.status == "OK") console.log("fan is turned off");
+		else console.log("error in deviceOn function");
+	});
 	deviceStatus("fan", function(status) {
 		console.log("status of fan has been changed to,"
 			status);
@@ -45,20 +56,22 @@ function deviceStatus(device, callback) {
 }
 
 // function to on a device
-function deviceOn(device) {
+function deviceOn(device, callback) {
 	var id = device_id_mapping.device;
 	var device_id = new Gpio(id, out);
+	var function_status = "OK";
 	device_id.writeSync(1);
 	var status = {
 		"status": function_status
 	};
-	return status;
+	callback(status);
 }
 
 // function to off a device
 function deviceOff(device) {
 	var id = device_id_mapping.device;
 	var device_id = new Gpio(id, out);
+	var function_status = "OK";
 	device_id.writeSync(0);
 	var status = {
 		"status": function_status
