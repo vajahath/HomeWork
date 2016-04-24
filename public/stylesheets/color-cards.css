@@ -31,7 +31,7 @@
 .card {
 	background-color: #FAFAFA;
 	box-shadow: 2px 2px 7px #505050;
-	border-radius: 2px;
+	border-radius: 4px;
 	margin-top: 10px;
 	margin-bottom: 15px;
 	padding: 15px 15px 15px 15px;
@@ -214,6 +214,29 @@
 	color: #FFF;
 }
 
+/*------------------light-yellow for recent logs -------------*/
+/* .card-light-yellow {
+	background-color: #FFFFFF;
+	color: #FFF;
+}
+
+.card-light-yellow .card-update-time {
+	color: #FFC000;
+}
+
+.card-light-yellow h3 {
+	color: #000;
+}
+
+.card-light-yellow .card-bottom p {
+	color: #ABABAB;
+}
+
+.card-light-yellow .card-content .card-highlight {
+	/* color:#F7FF60; 
+	color: #FFF;
+}
+*/
 
 /* -------temperature and degree celcious ----------- */
 
@@ -241,12 +264,57 @@
 
 /* style for charts in overview cards */
 .overview-card-charts {
-	width: 135px;
-	height: 135px;
+	width: 125px;
+	height: 125px;
 }
 
 .card-image{
 	max-height:70px;
 	max-width:100px;
 	margin:10px 5px 10px 5px;
+}
+
+
+/* ----------------------------- */
+/* notification cards */
+
+.noti-card {
+	background-color: #FFF;
+	box-shadow: 1px 1px 5px #505050;
+	border-radius: 4px;
+	margin-top: 4px;
+	margin-bottom: 9px;
+	transition: all ease-in-out .1s;
+}
+
+.noti-card:hover {
+	box-shadow: 2px 2px 18px #505050;
+	transition: all ease-in-out .1s;
+}
+
+.noti-card .col-md-2{
+	padding:10px 1px 7px 9px;
+}
+.noti-card .col-md-10{
+	padding:10px 9px 7px 5px;
+}
+
+.noti-card img{
+	width:40px;
+	height:40px;
+}
+
+.noti-card h4{
+	margin-top:2px;
+	display:inline-block;
+}
+
+.noti-card .noti-card-time{
+	font-size:10px;
+	display:inline-block;
+	color:#5E5E5E;
+}
+
+.noti-card .noti-card-content{
+	color:#5E5E5E;
 }

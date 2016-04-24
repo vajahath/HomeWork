@@ -108,25 +108,10 @@
 
 					<!-- quick pane -->
 					<div id="quick" class="tab-pane fade">
+						
+						<% include ./partials/quick_tabContent %>
 
-						<div class="panel panel-success">
-							<!-- panel heading -->
-							<div class="panel-heading">
-								<h3 class="panel-title">Quick Look</h3>
-							</div>
-							<!-- panel body -->
-							<div class="panel-body">
-								<div class="input-group">
-									<input type="text" autofocus class="form-control" placeholder="Start typing...">
-									<span class="input-group-btn"><button class="btn btn-success" type="button">
-											<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-									</button>
-									</span>
-								</div>
-								<br>
-							</div>
-							<!-- panel body -->
-						</div>
+						
 					</div>
 					<!-- end-quick-pane -->
 
@@ -145,28 +130,54 @@
 				</div>
 			</div>
 
-			<!-- log -->
+			<!-- right panel for notification, log, and number of users online -->
 			<div class="col-md-3">
-				<div class="panel panel-warning">
-					<div class="panel-heading">
-						<h3 class="panel-title">Notifications</h3>
+				<!-- notification -->
+				<div class="noti-card row">
+					<div class="col-md-2">
+						<img class="img-responsive img-circle" src="/images/notification_icons/noisy.png" alt="noisy">
 					</div>
-					<div class="panel-body">
-						Panel content
-					</div>
-				</div>
-				<div class="panel panel-success">
-					<div class="panel-heading">
-						<h3 class="panel-title">Recent Log</h3>
-					</div>
-					<div class="panel-body">
-						Panel content
+					<div class="col-md-10">
+						<h4>Noise</h4>
+						<p class="pull-right noti-card-time">12:02 am</p>
+						<p class="noti-card-content">Outside is too much noisy! - 112 dB</p>
 					</div>
 				</div>
-				<div class="panel panel-success">
-					<div class="panel-body">
-						<strong>Number of users online :</strong> 2
+
+				<div class="noti-card row">
+					<div class="col-md-2">
+						<img class="img-responsive img-circle" src="/images/notification_icons/noisy.png" alt="noisy">
 					</div>
+					<div class="col-md-10">
+						<h4>Noise</h4>
+						<p class="pull-right noti-card-time">12:02 am</p>
+						<p class="noti-card-content">Outside is too much noisy! - 112 dB</p>
+					</div>
+				</div>
+
+
+
+				<!-- recent log -->
+				<div class="row card">
+					<h3>Recent Log</h3>
+					<ul>
+						<li><span class="log-time">2:06 am</span>A/c turned off</li>
+						<li><span class="log-time">2:06 am</span>Outdoor light turned off</li>
+						<li><span class="log-time">2:06 am</span>Window 3 closed</li>
+						<li><span class="log-time">2:06 am</span>Door 2 opened</li>
+						<li><span class="log-time">2:06 am</span>Tank filled</li>
+					</ul>
+
+					<div class="card-bottom">
+						<p>Card showing last 5 activities.</p>
+						<button type="button" class="btn btn-default">History</button>
+					</div>
+				</div>
+				
+				<!-- number of users online -->
+				<div class="card card-blue row">
+					<p class="card-update-time">Card showing number of users accessing your account simultaneously</p>
+					<h3>Users online: 2</h3>
 				</div>
 			</div>
 			<div class="col-md-1">md1</div>
