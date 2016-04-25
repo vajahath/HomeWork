@@ -82,10 +82,68 @@
 	letter-spacing: 2px;
 }
 
-.card .row{
+.card .row {
 	margin-bottom: 7px;
 	margin-top: 7px;
 }
+
+
+/* ===toggle== */
+
+.card .toggle {
+	position: relative;
+	width: 55px;
+	display: inline-block;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+.card .toggle-checkbox {
+	display: none;
+}
+
+.card .toggle-label {
+	display: block;
+	overflow: hidden;
+	cursor: pointer;
+	height: 15px;
+	padding: 0;
+	line-height: 20px;
+	border: 0px solid #FFFFFF;
+	border-radius: 30px;
+	background-color: #E1E1E1;
+	transition: all 0.3s ease-in;
+}
+
+.card .toggle-label:before {
+	content: "";
+	display: block;
+	width: 30px;
+	margin: -5px;
+	background: #FFFFFF;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 31px;
+	border-radius: 30px;
+	box-shadow: 3px 3px 10px 0px #757575;
+	transition: all 0.3s ease-in;
+}
+
+.card .toggle-checkbox:checked + .toggle-label .toggle-inner {
+	margin-left: 0;
+}
+
+.card .toggle-checkbox:checked + .toggle-label:before {
+	background-color: #49B5FA;
+	right: 0px;
+	box-shadow: 3px 3px 10px 0px #757575;
+}
+
+
+/* ===toggle== */
+
 
 /*-------blue-card--------*/
 
@@ -214,29 +272,9 @@
 	color: #FFF;
 }
 
-/*------------------light-yellow for recent logs -------------*/
-/* .card-light-yellow {
-	background-color: #FFFFFF;
-	color: #FFF;
+.card .toggle-checkbox:checked + .toggle-label:before {
+	background-color: #FFF200;
 }
-
-.card-light-yellow .card-update-time {
-	color: #FFC000;
-}
-
-.card-light-yellow h3 {
-	color: #000;
-}
-
-.card-light-yellow .card-bottom p {
-	color: #ABABAB;
-}
-
-.card-light-yellow .card-content .card-highlight {
-	/* color:#F7FF60; 
-	color: #FFF;
-}
-*/
 
 /* -------temperature and degree celcious ----------- */
 
@@ -263,19 +301,22 @@
 
 
 /* style for charts in overview cards */
+
 .overview-card-charts {
 	width: 125px;
 	height: 125px;
 }
 
-.card-image{
-	max-height:70px;
-	max-width:100px;
-	margin:10px 5px 10px 5px;
+.card-image {
+	max-height: 70px;
+	max-width: 100px;
+	margin: 10px 5px 10px 5px;
 }
 
 
 /* ----------------------------- */
+
+
 /* notification cards */
 
 .noti-card {
@@ -292,29 +333,33 @@
 	transition: all ease-in-out .1s;
 }
 
-.noti-card .col-md-2{
-	padding:10px 1px 7px 9px;
-}
-.noti-card .col-md-10{
-	padding:10px 9px 7px 5px;
+.noti-card .col-md-2 {
+	padding: 10px 1px 7px 9px;
 }
 
-.noti-card img{
-	width:40px;
-	height:40px;
+.noti-card .col-md-10 {
+	padding: 10px 9px 7px 5px;
 }
 
-.noti-card h4{
-	margin-top:2px;
-	display:inline-block;
+.noti-card img {
+	width: 40px;
+	height: 40px;
 }
 
-.noti-card .noti-card-time{
-	font-size:10px;
-	display:inline-block;
-	color:#5E5E5E;
+.noti-card h4 {
+	margin-top: 2px;
+	display: inline-block;
 }
 
-.noti-card .noti-card-content{
-	color:#5E5E5E;
+.noti-card .noti-card-time {
+	font-size: 10px;
+	display: inline-block;
+	color: #5E5E5E;
 }
+
+.noti-card .noti-card-content {
+	color: #5E5E5E;
+}
+
+
+/* ============================================switch */

@@ -6,5 +6,89 @@ for quick pane in console.js
 this file contains filterbox and color-cards for quick tab pane 
 
  -->
+<!-- filter out input pane -->
+<div class="row">
+	<div class="col-md-9">
+		<div class="card card-blue">
+			<p class="card-update-time">Filter your content...</p>
+			<div class="card-content">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Start typing...">
+					</textarea>
+				</div>
+			</div>
+		</div>
+	</div>
 
-div
+	<div class="col-md-3">
+		<!-- for width adjustment	 -->
+	</div>
+</div>
+
+<!-- quick card -->
+<div class="row">
+	<div class="col-md-12">
+		<!-- emergency card -->
+		<div class="card card-red">
+			<p class="card-update-time">Emergency Actions</p>
+			<h3>Emergency Window</h3>
+			<div class="card-content">
+				<p>Closes all doors and windows and turns on light
+					<button class="btn btn-default" type="button">Secure Home</button>
+				</p>
+				<hr>
+
+				<button class="btn btn-default" type="button">Lock all Doors</button>
+				<button class="btn btn-default" type="button">Lock all Windows</button>
+				<button class="btn btn-default" type="button">Open all windows</button>
+
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-4">
+				<div class="card card-red">
+					<p class="card-update-time">Turn all lights on and plays House Music</p>
+					<h3>Party Mode</h3>
+					<br>
+					<div class="card-content">
+
+						<div class="toggle">
+							<input type="checkbox" name="toggle" class="toggle-checkbox" id="mycardtoggle" checked>
+							<label class="toggle-label" for="mycardtoggle"></label>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-md-8">
+				<div class="card">
+					<p class="card-update-time">Ambient house music</p>
+					<h3>Ambient Music</h3>
+
+					<div class="row card-content">
+						<div class="col-md-4">
+							<button type="button" class="btn btn-info">
+								<span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+							</button>
+						</div>
+						<div class="col-md-8">
+							<div class="form-group">
+								<select class="form-control" id="sel1">
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+	</div>
+
+</div>
