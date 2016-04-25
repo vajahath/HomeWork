@@ -91,6 +91,8 @@
 /* ===toggle== */
 
 .card .toggle {
+	margin-top:5px;
+	margin-bottom:5px;
 	position: relative;
 	width: 55px;
 	display: inline-block;
@@ -140,7 +142,6 @@
 	right: 0px;
 	box-shadow: 3px 3px 10px 0px #757575;
 }
-
 
 /* ===toggle== */
 
@@ -197,6 +198,9 @@
 	color: #87D1FF;
 }
 
+.card-blue .toggle-checkbox:checked + .toggle-label:before {
+	background-color: #FFF200;
+}
 
 /*------green-card-------*/
 
@@ -246,6 +250,9 @@
 	/* color:#F7FF60; */
 	color: #FFF;
 }
+.card-yellow .toggle-checkbox:checked + .toggle-label:before {
+	background-color: #FF4186;
+}
 
 
 /*-----red-card-------*/
@@ -272,7 +279,7 @@
 	color: #FFF;
 }
 
-.card .toggle-checkbox:checked + .toggle-label:before {
+.card-red .toggle-checkbox:checked + .toggle-label:before {
 	background-color: #FFF200;
 }
 

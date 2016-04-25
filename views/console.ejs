@@ -4,10 +4,8 @@
 <head>
 	<!-- heads -->
 	<% include ./partials/head %>
-
 		<!-- handle google charts -->
 		<% include ./partials/charts %>
-
 </head>
 
 <body>
@@ -16,11 +14,9 @@
 		border-color: #449D44;
 	} */
 	</style>
-
 	<div class="container-fluid main-content">
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
-
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -40,50 +36,24 @@
 							<button type="button" class="btn btn-success navbar-btn">Register</button>
 						</li>
 					</ul>
+					<form class="navbar-form navbar-left" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Search">
+						</div>
+						<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+					</form>
 				</div>
 				<!-- /.navbar-collapse -->
 			</div>
 			<!-- /.container-fluid -->
 		</nav>
 		<!-- nav bar over -->
-
 		<!-- body starts here.. -->
-		<div class="row">
-			<div class="col-md-12 text-center">
-				<h1 class="os-300">Know your home</h1>
-				<p class="lead os-300">Status</p>
-			</div>
-		</div>
-
-		<!-- quick status -->
-		<div class="row">
-			<div class="col-sm-3 col-md-3 col-lg-4"></div>
-
-			<!-- content goes here -->
-			<div class="col-sm-6 col-md-6 col-lg-4 col-xs-12">
-				<div class="alert alert-success text-center" role="alert"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span><strong> Sweet home!</strong> Everything goes fine, relax...</div>
-			</div>
-
-			<div class="col-sm-3 col-md-3 col-lg-4"></div>
-		</div>
-
 		<!-- device status -->
 		<div class="row" style="margin-top: 15px;">
 			<!-- content goes here -->
 			<div class="col-md-1"></div>
 			<div class="col-md-7">
-
-				<!-- search box -->
-				<div class="input-group" style="width:50%;">
-					<input type="text" autofocus class="form-control" placeholder="Search...">
-					<span class="input-group-btn"><button class="btn btn-success" type="button">
-							<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-					</button>
-					</span>
-				</div>
-
-				<br>
-
 				<!-- pills -->
 				<ul class="nav nav-pills green">
 					<li class="active"><a data-toggle="pill" href="#overview" title="Overview">Overview</a></li>
@@ -92,44 +62,41 @@
 					<li><a data-toggle="pill" href="#appliances" title="Appliances">Appliances</a></li>
 					<li><a data-toggle="pill" href="#resources" title="Resources">Resources</a></li>
 				</ul>
-
 				<br>
-
 				<!-- pill content -->
 				<!-- Tab: overview -->
 				<div class="tab-content">
 					<!-- overview panel -->
 					<div id="overview" class="tab-pane fade in active">
-
 						<% include ./partials/overview_tabContent %>
-
 					</div>
 					<!-- overview -->
-
 					<!-- quick pane -->
 					<div id="quick" class="tab-pane fade">
-						
 						<% include ./partials/quick_tabContent %>
-
-						
 					</div>
 					<!-- end-quick-pane -->
-
 					<!-- doors pane -->
 					<div id="doors" class="tab-pane fade">
-
+						<div class="row">
+							<div class="col-md-12">
+								<% include ./partials/doors_tabContent %>
+							</div>
+						</div>
 					</div>
-
 					<div id="appliances" class="tab-pane fade">
 						<!-- appliances pane -->
+						<div class="row">
+							<div class="col-md-12">
+								<% include ./partials/appliances_tabContent %>
+							</div>
+						</div>
 					</div>
-
 					<div id="resources" class="tab-pane fade">
 						<!-- resources pane -->
 					</div>
 				</div>
 			</div>
-
 			<!-- right panel for notification, log, and number of users online -->
 			<div class="col-md-3">
 				<!-- notification -->
@@ -143,7 +110,6 @@
 						<p class="noti-card-content">Outside is too much noisy! - 112 dB</p>
 					</div>
 				</div>
-
 				<div class="noti-card row">
 					<div class="col-md-2">
 						<img class="img-responsive img-circle" src="/images/notification_icons/noisy.png" alt="noisy">
@@ -154,9 +120,6 @@
 						<p class="noti-card-content">Outside is too much noisy! - 112 dB</p>
 					</div>
 				</div>
-
-
-
 				<!-- recent log -->
 				<div class="row card">
 					<h3>Recent Log</h3>
@@ -167,13 +130,11 @@
 						<li><span class="log-time">2:06 am</span>Door 2 opened</li>
 						<li><span class="log-time">2:06 am</span>Tank filled</li>
 					</ul>
-
 					<div class="card-bottom">
 						<p>Card showing last 5 activities.</p>
 						<button type="button" class="btn btn-default">History</button>
 					</div>
 				</div>
-				
 				<!-- number of users online -->
 				<div class="card card-green row">
 					<p class="card-update-time">Card showing number of users accessing your account simultaneously</p>
@@ -182,9 +143,7 @@
 			</div>
 			<div class="col-md-1">md1</div>
 		</div>
-
 	</div>
-
 	<% include ./partials/footer %>
 </body>
 
