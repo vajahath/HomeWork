@@ -11,13 +11,7 @@ router.get('/', function(req, res) {
 	console.log("testing in pi");
 	//To test the created functions
 
-	device_id = new Gpio(17, 'out');
-	device_id.writeSync(1);
-
-	testing("fan", function(status) {
-		console.log(status);
-	});
-
+	
 	deviceOn("fan", function(status) {
 		if (status.status == "OK") console.log("bulb turned on");
 		else console.log("error in deviceOn function");
@@ -57,46 +51,51 @@ var device_id_mapping = {
 	'ac': 22
 };
 
+function detectDeviceId(device,callback){
+	var id=device_id_mapping.device;
+	callback(id);
+}
 // function for getting status of devices
 function deviceStatus(device, callback) {
-	var id = device_id_mapping.device;
-	device_id = new Gpio(id, 'out');
-	var function_status = "OK";
-	var status = {
+	detectDeviceId(device,function(id){
+		device_id = new Gpio(id, 'out');
+		var function_status = "OK";
+		var status = {
 		"pin_state": device_id.readSync(),
 		"host": "pi",
 		"status": function_status
-	};
+		};
+	});
+	
 	callback(status);
 }
 
 // function to on a device
 function deviceOn(device, callback) {
-	var id = device_id_mapping.device;
-	// var device_id = new Gpio(22, 'out');
-	var function_status = "OK";
-	// device_id.writeSync(1);
-	var status = {
+	detectDeviceId(device,function(id){
+		//var device_id = new Gpio(id, 'out');
+		var function_status = "OK";
+		// device_id.writeSync(1);
+		var status = {
 		"status": function_status
-	};
+	};	
+	});
 	callback(status);
 }
 
-function testing(device, callback) {
-	callback(device_id_mapping.fan);
-}
+
 
 // function to off a device
 function deviceOff(device) {
-	var id = device_id_mapping.device;
-	var device_id = new Gpio(id, 'out');
-	var function_status = "OK";
-	device_id.writeSync(0);
-	var status = {
-		"status": function_status
-	};
+	detectDeviceId(device,function(id){
+		var device_id = new Gpio(id, 'out');
+		var function_status = "OK";
+		device_id.writeSync(0);
+		var status = {
+			"status": function_status
+		};
+	});
 	callback(status);
-
 }
 
 module.exports = router;
