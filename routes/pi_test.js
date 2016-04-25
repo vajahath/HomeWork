@@ -1,6 +1,5 @@
 var express = require('express');
 var Gpio = require('onoff').Gpio;
-
 var router = express.Router();
 
 
@@ -51,50 +50,45 @@ var device_id_mapping = {
 	'ac': 22
 };
 
-function detectDeviceId(device,callback){
-	var id=device_id_mapping.device;
-	callback(id);
-}
+//function detectDeviceId(device,callback){
+//	var id=device_id_mapping.device;
+//	callback(id);
+//}
 // function for getting status of devices
-function deviceStatus(device, callback) {
-	detectDeviceId(device,function(id){
-		device_id = new Gpio(id, 'out');
-		var function_status = "OK";
-		var status = {
+function deviceStatus(device,callback){
+	var device_id = new Gpio(device_id_mapping.device, 'out');
+	var function_status = "OK";
+	var status = {
 		"pin_state": device_id.readSync(),
 		"host": "pi",
 		"status": function_status
-		};
-	});
+	};
 	
 	callback(status);
 }
 
 // function to on a device
-function deviceOn(device, callback) {
-	detectDeviceId(device,function(id){
-		//var device_id = new Gpio(id, 'out');
-		var function_status = "OK";
-		// device_id.writeSync(1);
-		var status = {
+function deviceOn(device, callback){
+	var device_id = new Gpio(device_id_mapping.device, 'out');
+	var function_status = "OK";
+	device_id.writeSync(1);
+	var status = {
 		"status": function_status
 	};	
-	});
 	callback(status);
 }
 
 
 
 // function to off a device
-function deviceOff(device) {
-	detectDeviceId(device,function(id){
-		var device_id = new Gpio(id, 'out');
-		var function_status = "OK";
-		device_id.writeSync(0);
-		var status = {
-			"status": function_status
+function deviceOff(device,callback) {
+	
+	var device_id = new Gpio(device_id_mapping.device, 'out');
+	var function_status = "OK";
+	device_id.writeSync(0);
+	var status = {
+		"status": function_status
 		};
-	});
 	callback(status);
 }
 
