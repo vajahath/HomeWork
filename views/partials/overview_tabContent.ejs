@@ -39,7 +39,7 @@ this file contains filterbox and color-cards for overview tab pane
 						<div class="card-content">
 							<div class="card-center">
 								<p class="in-temp">
-									<sub>34</sub><sup class="in-degC">&#8451;</sup>
+									<sub>{{temperature.inside}}</sub><sup class="in-degC">&#8451;</sup>
 								</p>
 							</div>
 						</div>
@@ -61,7 +61,7 @@ this file contains filterbox and color-cards for overview tab pane
 						<div class="card-content">
 							<div class="card-center">
 								<p class="in-temp">
-									<sub>38</sub><sup class="in-degC">&#8451;</sup>
+									<sub>{{temperature.outside}}</sub><sup class="in-degC">&#8451;</sup>
 								</p>
 							</div>
 						</div>
@@ -82,7 +82,7 @@ this file contains filterbox and color-cards for overview tab pane
 					<div id="chart_div3" class="overview-card-charts">Loading...</div>
 				</div>
 				<div class="col-md-6">
-					<p style="font-size: 35px;">23 hours left</p>
+					<p style="font-size: 35px;">{{water.timeLeft}} hours left</p>
 					<p>statistics based on your average usage.</p>
 				</div>
 			</div>

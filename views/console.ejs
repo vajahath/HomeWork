@@ -5,15 +5,16 @@
 	<!-- heads -->
 	<% include ./partials/head %>
 		<!-- handle google charts -->
-		<% include ./partials/charts %>
+		<!-- include ./partials/charts -->
+
+		<!-- required angular functions -->
+		<script src="/javascripts/console_app.js"></script>
+		<script src="/javascripts/drawChart.js"></script>
+		<script src="/javascripts/colorChartRef.js"></script>
 </head>
 
-<body>
-	<style>
-	/* .form-control:focus {
-		border-color: #449D44;
-	} */
-	</style>
+<body ng-app="homeWork_console" ng-controller="console_controller">
+
 	<div class="container-fluid main-content">
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
@@ -32,9 +33,7 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="#">Blog</a></li>
 						<li><a href="#">Help</a></li>
-						<li>
-							<button type="button" class="btn btn-success navbar-btn">Register</button>
-						</li>
+						<li><a href="/logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a></li>
 					</ul>
 					<form class="navbar-form navbar-left" role="search">
 						<div class="form-group">
