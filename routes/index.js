@@ -1,3 +1,5 @@
+var test = require('../customLibs/test.js');
+
 var express = require('express');
 
 var User = require('../models/User');
@@ -68,5 +70,10 @@ router.get('/logout', function(req, res) {
 		}
 	})
 });
+
+
+router.get('/test', function(req, res){
+	test.printHi();
+})
 
 module.exports = router;

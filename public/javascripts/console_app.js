@@ -36,6 +36,10 @@ app.factory('datastore', [function() {
 		devices: {
 			off: 13,
 			on: 2
+		},
+		rain:{
+			chance: 60%,
+			status:"There can be rain"
 		}
 	}
 
