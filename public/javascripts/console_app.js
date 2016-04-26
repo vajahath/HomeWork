@@ -4,10 +4,21 @@ app.controller('console_controller', [
 	'$scope',
 	'datastore',
 	'charts',
-	function($scope, datastore, charts) {
+	'dataStoreTest',
+	'$http',
+	function($scope, datastore, charts, dataStoreTest, $http) {
 
 		$scope.data = datastore;
 		charts.drawChart();
+
+		$http.get('/apis/populateme')
+			.then(function(response) {
+				dataStoreTest = response.data;
+			})
+			.then(function() {
+				console.log(dataStoreTest)
+			});
+
 
 	}
 ]);
@@ -17,7 +28,7 @@ app.controller('console_controller', [
 app.factory('datastore', [function() {
 	var data = {
 		temperature: {
-			inside: 22,
+			inside: 20,
 			outside: 30,
 			string: "Normal temperature inside."
 		},
@@ -39,12 +50,12 @@ app.factory('datastore', [function() {
 			total: 3,
 			closed: 1,
 			list: [
-				{ id: "test1", name: "front door", state: true, comment: "hello world" },
-				{ id: "test2", name: "front door", state: false, comment: "hello world" },
-				{ id: "test3", name: "front door", state: true, comment: "hello world" },
-				{ id: "test4", name: "front door", state: true, comment: "hello world" },
-				{ id: "test5", name: "front door", state: false, comment: "hello world" },
-				{ id: "test6", name: "front door", state: true, comment: "hello world" }
+				{ id: "test1", pin: 12, name: "front door", state: true, comment: "hello world" },
+				{ id: "test2", pin: 12, name: "front door", state: false, comment: "hello world" },
+				{ id: "test3", pin: 12, name: "front door", state: true, comment: "hello world" },
+				{ id: "test4", pin: 12, name: "front door", state: true, comment: "hello world" },
+				{ id: "test5", pin: 12, name: "front door", state: false, comment: "hello world" },
+				{ id: "test6", pin: 12, name: "front door", state: true, comment: "hello world" }
 			]
 		},
 		windows: {

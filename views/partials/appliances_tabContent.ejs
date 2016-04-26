@@ -29,6 +29,7 @@
 		<table class="table">
 			<thead>
 				<tr>
+					<th>Pin</th>
 					<th>Main Devices</th>
 					<th>Choice</th>
 					<th>Comment</th>
@@ -36,6 +37,9 @@
 			</thead>
 			<tbody>
 				<tr ng-repeat="device in data.devices.heavyDevice_list">
+					<td>
+						<p>{{door.pin}}</p>
+					</td>
 					<td>
 						<p>{{device.name}}<span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true"></span></p>
 					</td>

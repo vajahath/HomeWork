@@ -27,6 +27,7 @@
 		<table class="table">
 			<thead>
 				<tr>
+					<th>Pin</th>
 					<th>Doors</th>
 					<th>Choice</th>
 					<th>Comment</th>
@@ -34,6 +35,9 @@
 			</thead>
 			<tbody>
 				<tr ng-repeat="door in data.doors.list">
+					<td>
+						<p>{{door.pin}}</p>
+					</td>
 					<td>
 						<p>{{door.name}}<span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true"></span></p>
 					</td>
@@ -60,6 +64,7 @@
 		<table class="table">
 			<thead>
 				<tr>
+					<th>Pin</th>
 					<th>Windows</th>
 					<th>Choice</th>
 					<th>Comment</th>
@@ -67,6 +72,9 @@
 			</thead>
 			<tbody>
 				<tr ng-repeat="window in data.windows.list">
+					<td>
+						<p>{{window.pin}}</p>
+					</td>
 					<td>
 						<p>{{window.name}}<span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true"></span></p>
 					</td>

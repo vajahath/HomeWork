@@ -10,7 +10,9 @@ var mongoose = require('mongoose');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var uconsole = require('./routes/console');
-var play = require('./routes/play')
+var apis = require('./routes/apis');
+var play = require('./routes/play');
+
 
 var app = express();
 
@@ -42,6 +44,8 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/console', uconsole);
 app.use('/play', play);
+app.use('/apis', apis);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
