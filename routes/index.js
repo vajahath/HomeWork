@@ -1,4 +1,4 @@
-var test = require('../customLibs/pi_interface.js');
+var test = require('../customLibs/device_mapping.js');
 
 var express = require('express');
 
@@ -73,9 +73,8 @@ router.get('/logout', function(req, res) {
 
 
 router.get('/test', function(req, res){
-	test.deviceStatus("fan",function(status){
-		console.log(status);
-	});
+	test.addDevice("ac");
+	
 });
 
 module.exports=router;
