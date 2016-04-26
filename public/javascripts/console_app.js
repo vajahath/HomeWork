@@ -34,45 +34,59 @@ app.factory('datastore', [function() {
 			status: "Charging"
 		},
 		users_online: 2,
-		partyMode: false,
+		partyMode: true,
 		doors: {
 			total: 3,
 			closed: 1,
-			list: {
-				door1: true,
-				door2: true
-			}
+			list: [
+				{ id: "test1", name: "front door", state: true, comment: "hello world" },
+				{ id: "test2", name: "front door", state: false, comment: "hello world" },
+				{ id: "test3", name: "front door", state: true, comment: "hello world" },
+				{ id: "test4", name: "front door", state: true, comment: "hello world" },
+				{ id: "test5", name: "front door", state: false, comment: "hello world" },
+				{ id: "test6", name: "front door", state: true, comment: "hello world" }
+			]
 		},
 		windows: {
 			closed: 6,
 			open: 3,
-			list: {
-				window1: true,
-				window2: true
-			}
+			list: [
+				{ id: "testw1", name: "front window", state: true, comment: "hello world" },
+				{ id: "testw2", name: "front window", state: true, comment: "hello world" },
+				{ id: "testw3", name: "front window", state: true, comment: "hello world" },
+				{ id: "testw4", name: "front window", state: false, comment: "hello world" },
+				{ id: "testw5", name: "front window", state: true, comment: "hello world" },
+				{ id: "testw6", name: "front window", state: false, comment: "hello world" }
+			]
 		},
+
 		devices: {
 			off: 13, //total
 			on: 2, //total
-			// list 
-			ac: "ON",
-			wash: "OFF",
-			fridge: "ON",
-			motor: "OFF",
+			// list
+			heavyDevice_list: [
+				{ id: "htestd1", name: "A/c", state: true, comment: "hello world" },
+				{ id: "htestd2", name: "Washing Machine", state: true, comment: "hello world" },
+				{ id: "htestd3", name: "Refrigereator", state: true, comment: "hello world" },
+				{ id: "htestd4", name: "Motor", state: true, comment: "hello world" },
+			],
 
-			lights: {
-				light1: "ON",
-				light2: "OFF",
-			},
+			lights_list: [
+				{ id: "Ltest1", name: "front light", state: true, comment: "hello world" },
+				{ id: "l2est1", name: "front light", state: true, comment: "hello world" },
+				{ id: "l3test1", name: "front light", state: true, comment: "hello world" },
+				{ id: "l4test1", name: "front light", state: true, comment: "hello world" }
+			],
 
-			fans: {
-				fan1: "ON",
-				fan2: "OFF",
-			}
+			fans_list: [
+				{ id: "f1test1", name: "front fan", state: true, comment: "hello world" },
+				{ id: "f2test1", name: "front fan", state: true, comment: "hello world" },
+				{ id: "f3test1", name: "front fan", state: true, comment: "hello world" }
+			]
 		}
 
 
-	}
+	};
 
 	return data;
 }]);

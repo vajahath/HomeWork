@@ -34,7 +34,7 @@ mongoose.connect('mongodb://localhost/homeworkDB');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'mongoose connection error:'));
 db.once('open', function() {
-  console.log("connected to database via mongoose");
+  console.log("connected to homeworkDB via mongoose.");
 });
 
 // routes

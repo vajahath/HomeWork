@@ -29,24 +29,24 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th>AC</th>
+					<th>Main Devices</th>
 					<th>Choice</th>
 					<th>Comment</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
+				<tr ng-repeat="device in data.devices.heavyDevice_list">
 					<td>
-						<p>Front Hall<span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true"></span></p>
+						<p>{{device.name}}<span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true"></span></p>
 					</td>
 					<td>
 						<div class="toggle">
-							<input type="checkbox" name="toggle" class="toggle-checkbox" id="ac1" checked>
-							<label class="toggle-label" for="ac1"></label>
+							<input type="checkbox" name="toggle" class="toggle-checkbox" id="{{device.id}}" checked="{{device.state}}">
+							<label class="toggle-label" for="{{device.id}}"></label>
 						</div>
 					</td>
 					<td>
-						<p>Some comments here..<span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true"></span></p>
+						<p>{{device.comments}}<span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true"></span></p>
 					</td>
 				</tr>
 			</tbody>
@@ -67,18 +67,18 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
+				<tr ng-repeat="light in data.devices.lights_list">
 					<td>
-						<p>Light 1 - front hall<span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true"></span></p>
+						<p>{{light.name}}<span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true"></span></p>
 					</td>
 					<td>
 						<div class="toggle">
-							<input type="checkbox" name="toggle" class="toggle-checkbox" id="frontLight1" checked>
-							<label class="toggle-label" for="frontLight1"></label>
+							<input type="checkbox" name="toggle" class="toggle-checkbox" id="{{light.id}}" checked="{{light.state}}">
+							<label class="toggle-label" for="{{light.id}}"></label>
 						</div>
 					</td>
 					<td>
-						<p>Some comments here..<span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true"></span></p>
+						<p>{{light.comments}}<span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true"></span></p>
 					</td>
 				</tr>
 			</tbody>
@@ -100,50 +100,18 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
+				<tr ng-repeat="fan in data.devices.fans_list">
 					<td>
-						<p>Front Hall<span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true"></span></p>
+						<p>{{fan.name}}<span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true"></span></p>
 					</td>
 					<td>
 						<div class="toggle">
-							<input type="checkbox" name="toggle" class="toggle-checkbox" id="fan1" checked>
-							<label class="toggle-label" for="fan1"></label>
+							<input type="checkbox" name="toggle" class="toggle-checkbox" id="{{fan.id}}" checked="{{fan.state}}">
+							<label class="toggle-label" for="{{fan.id}}"></label>
 						</div>
 					</td>
 					<td>
-						<p>Some comments here..<span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true"></span></p>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-</div>
-
-<!-- Refrigerator -->
-<div class="card card-yellow">
-	<p class="card-update-time">Manage Refrigerator: Preserve your food.</p>
-	<div class="card-content">
-		<table class="table">
-			<thead>
-				<tr>
-					<th>Refrigerator</th>
-					<th>Choice</th>
-					<th>Comment</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>
-						<p>Front Hall<span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true"></span></p>
-					</td>
-					<td>
-						<div class="toggle">
-							<input type="checkbox" name="toggle" class="toggle-checkbox" id="fridge1" checked>
-							<label class="toggle-label" for="fridge1"></label>
-						</div>
-					</td>
-					<td>
-						<p>Some comments here..<span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true"></span></p>
+						<p>{{fan.comments}}<span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true"></span></p>
 					</td>
 				</tr>
 			</tbody>

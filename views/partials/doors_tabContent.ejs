@@ -33,18 +33,18 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
+				<tr ng-repeat="door in data.doors.list">
 					<td>
-						<p>Main door<span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true"></span></p>
+						<p>{{door.name}}<span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true"></span></p>
 					</td>
 					<td>
 						<div class="toggle">
-							<input type="checkbox" name="toggle" class="toggle-checkbox" id="mainDoor" checked>
-							<label class="toggle-label" for="mainDoor"></label>
+							<input type="checkbox" name="toggle" class="toggle-checkbox" id="{{door.id}}" checked="{{door.state}}">
+							<label class="toggle-label" for="{{door.id}}"></label>
 						</div>
 					</td>
 					<td>
-						<p>Some comments here..<span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true"></span></p>
+						<p>{{door.comment}}<span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true"></span></p>
 					</td>
 				</tr>
 			</tbody>
@@ -66,18 +66,18 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
+				<tr ng-repeat="window in data.windows.list">
 					<td>
-						<p>Main window<span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true"></span></p>
+						<p>{{window.name}}<span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true"></span></p>
 					</td>
 					<td>
 						<div class="toggle">
-							<input type="checkbox" name="toggle" class="toggle-checkbox" id="mainWindow" checked>
-							<label class="toggle-label" for="mainWindow"></label>
+							<input type="checkbox" name="toggle" class="toggle-checkbox" id="{{window.id}}" checked="{{window.state}}">
+							<label class="toggle-label" for="{{window.id}}"></label>
 						</div>
 					</td>
 					<td>
-						<p>Some comments here..<span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true"></span></p>
+						<p>{{window.comment}}<span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true"></span></p>
 					</td>
 				</tr>
 			</tbody>
