@@ -4,6 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('express-session');
+var mongoose = require('mongoose');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -24,7 +26,19 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  secret: 'Lessons of Harmoney'
+}));
 
+// connecting to db via mongoose
+mongoose.connect('mongodb://localhost/homeworkDB');
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'mongoose connection error:'));
+db.once('open', function() {
+  console.log("connected to database via mongoose");
+});
+
+// routes
 app.use('/', routes);
 app.use('/users', users);
 app.use('/console', uconsole);
