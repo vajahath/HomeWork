@@ -55,7 +55,7 @@ var device_id_mapping = {
 function deviceStatus(device,callback){
 	var device_id = new Gpio(device_id_mapping[device], 'out');
 	var function_status = "OK";
-	var status = {0
+	var status = {
 		"pin_state": device_id.readSync(),
 		"host": "pi",
 		"status": function_status
