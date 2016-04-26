@@ -158,12 +158,12 @@ this file contains filterbox and color-cards for overview tab pane
 			<div class="col-md-6">
 				<div class="card">
 					<p class="card-update-time">Data from weather.com</p>
-					<h3>No rain today</h3>
+					<h3>{{data.rain.status}}</h3>
 					<div class="card-content">
 						<p class="temp" style="display:inline-block;">
-							<span class="card-highlight"><sub>30</sub><sup class="degC">%</sup></span>
+							<span class="card-highlight"><sub>{{data.rain.chance}}</sub><sup class="degC">%</sup></span>
 						</p>
-						<p style="display:inline-block;"> chance of rain</p>
+						<p style="display:inline-block;">chance of rain</p>
 					</div>
 				</div>
 				<!-- inverter status -->
@@ -172,9 +172,9 @@ this file contains filterbox and color-cards for overview tab pane
 					<h3>Inverter</h3>
 					<div class="card-content">
 						<p class="temp" style="display:inline-block;">
-							<span class="card-highlight"><sub>100</sub><sup class="degC">%</sup></span>
+							<span class="card-highlight"><sub>{{data.inverter.charge}}</sub><sup class="degC">%</sup></span>
 						</p>
-						<p style="text-align: center;">Charging</p>
+						<p style="text-align: center;">{{data.inverter.status}}</p>
 					</div>
 				</div>
 
@@ -194,7 +194,7 @@ this file contains filterbox and color-cards for overview tab pane
 			<div class="col-md-6">
 				<div class="card card-yellow">
 					<p class="card-update-time">Only showing the status of connected devices.</p>
-					<h3>Devices ON</h3>
+					<h3>Devices OFF</h3>
 					<div class="card-content">
 						<!-- graph -->
 						<div id="chart_div5" class="overview-card-charts">Loading...</div>
