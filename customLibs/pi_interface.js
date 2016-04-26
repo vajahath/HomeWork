@@ -4,7 +4,7 @@ var device_id_mapping= require('./device_mapping.js');
 var gpio_export = {
 
 	deviceStatus:function(device,callback){
-	var device_id = new Gpio(device_id_mapping[device], 'out');
+	var device_id = new Gpio(device_id_mapping[device], 'both');
 	var function_status = "OK";
 	var status = {
 		"pin_state": device_id.readSync(),

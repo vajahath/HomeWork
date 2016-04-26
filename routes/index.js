@@ -73,8 +73,8 @@ router.get('/logout', function(req, res) {
 
 
 router.get('/test', function(req, res){
-	test.deviceOn("fan",function(status){
-		console.log("testing device on function");
+	test.deviceStatus("fan",function(status){
+		console.log(status);
 	});
 });
 
