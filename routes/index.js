@@ -1,4 +1,4 @@
-var test = require('../customLibs/test.js');
+var test = require('../customLibs/pi_interface.js');
 
 var express = require('express');
 
@@ -73,7 +73,9 @@ router.get('/logout', function(req, res) {
 
 
 router.get('/test', function(req, res){
-	test.printHi();
-})
+	test.deviceOn("fan",function(status){
+		console.log("testing device on function");
+	});
+});
 
-module.exports = router;
+module.exports=router;
