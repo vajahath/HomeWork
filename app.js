@@ -10,9 +10,9 @@ var mongoose = require('mongoose');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var uconsole = require('./routes/console');
-var play = require('./routes/play');
 var pi_test = require('./routes/pi_test');
-
+var apis = require('./routes/apis');
+var play = require('./routes/play');
 var app = express();
 
 // view engine setup
@@ -35,7 +35,7 @@ mongoose.connect('mongodb://localhost/homeworkDB');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'mongoose connection error:'));
 db.once('open', function() {
-  console.log("connected to database via mongoose");
+  console.log("connected to homeworkDB via mongoose.");
 });
 
 // routes
@@ -44,6 +44,8 @@ app.use('/users', users);
 app.use('/console', uconsole);
 app.use('/play', play);
 app.use('/pi_test', pi_test);
+app.use('/apis', apis);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

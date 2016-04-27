@@ -33,7 +33,6 @@ var pin_edit={
         Device.findOneAndRemove({'device':removingDevice},function(err){
             if(err) throw err;
             console.log("Device "+removingDevice+" has been removed");
-            console.log(unUsedPin);
             unUsedPin.push(device_id_mapping[removingDevice]);//push pin of removing device to unUsedPin
             Device.find({},function(err,devices){
                 if(err) throw err;
