@@ -10,10 +10,9 @@ var mongoose = require('mongoose');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var uconsole = require('./routes/console');
+var pi_test = require('./routes/pi_test');
 var apis = require('./routes/apis');
 var play = require('./routes/play');
-
-
 var app = express();
 
 // view engine setup
@@ -44,6 +43,7 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/console', uconsole);
 app.use('/play', play);
+app.use('/pi_test', pi_test);
 app.use('/apis', apis);
 
 

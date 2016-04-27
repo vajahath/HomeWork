@@ -1,4 +1,4 @@
-var test = require('../customLibs/test.js');
+var test = require('../customLibs/device_mapping.js');
 
 var express = require('express');
 
@@ -73,7 +73,8 @@ router.get('/logout', function(req, res) {
 
 
 router.get('/test', function(req, res){
-	test.printHi();
-})
+	test.addDevice("ac");
+	
+});
 
-module.exports = router;
+module.exports=router;
