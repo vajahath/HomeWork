@@ -1,10 +1,17 @@
 var Device= require('../models/Device');
 var UnUsedPins=require('../models/UnUsedPin');
 
+var freepins;
 UnUsedPins.find({}, function(err, found){
     console.log("err :", err);
     console.log("found :", found[0].pins[1]);
-    });
+    freepins=found[0].pins;
+    //console.log('fp '+freepins[0]);
+
+for(var i=0;freepins[i]!=null ;i++){
+    console.log("freepins :", freepins[i]);
+    }
+});
 
 
 
