@@ -5,7 +5,12 @@ var pi = require('../customLibs/pi_interface');
 var router = express.Router();
 
 router.get('/populateme', function(req, res) {
+       // res.send(deviceList.doors[1]);
+        //res.send(pi.deviceStatus('door1').pin_state);
 	res.send(deepDig(initializeSense()));
+	//res.send(deviceList.doors[1]);
+	//res.send({ pin: 1});
+	//console.log(pi.deviceStatus('door1').pin_state);
 });
 
 
@@ -30,7 +35,7 @@ function initializeSense() {
 		},
 		rain: {
 			chance: 80,
-		}
+		},
 		inverter: {
 			charge: 95,
 			status: "Charging"
@@ -38,15 +43,20 @@ function initializeSense() {
 		users_online: 3,
 		partyMode: false,
 		doors: {
-			total: 2
+			total: 2,
+			list: []
 		},
 		windows: {
-			total: 2
+			total: 2,
+			list:[]
 		},
 		devices: {
 			heavyDevice_num: 4,
 			lights_num: 2,
-			fans_num: 1
+			fans_num: 1,
+			heavyDevice_list:[],
+			lights_list:[],
+			fans_list:[]
 		}
 	}
 	return data;
@@ -60,47 +70,50 @@ function deepDig(raw) {
 
 	// doors
 	for (var i = 0; i < raw.doors.total; i++) {
-		raw.doors.list[i] = {
+		raw.doors["list"].push({
 			id: deviceList.doors[i],
 			name: 'doors',
-			state: pi.deviceStatus(deviceList.doors[i]).pinState
-		}
+			state: pi.deviceStatus(deviceList.doors[i]).pin_state
+		});
+		console.log(raw.doors.list);
 	};
 
 	// windows
 	for (var i = 0; i < raw.windows.total; i++) {
-		raw.windows.list[i] = {
+		raw.windows["list"].push({
 			id: deviceList.windows[i],
 			name: 'windows',
-			state: pi.deviceStatus(deviceList.windows[i]).pinState
-		}
+			state: pi.deviceStatus(deviceList.windows[i]).pin_state
+		});
+		console.log(raw.windows.list);
 	};
 
 	// heavy devices
 	for (var i = 0; i < raw.devices.heavyDevice_num; i++) {
-		raw.heavyDevice.list[i] = {
+		raw.devices["heavyDevice_list"].push({
 			id: deviceList.heavyDevice[i],
 			name: 'heavyDevice',
-			state: pi.deviceStatus(deviceList.heavyDevice[i]).pinState
-		}
+			state: pi.deviceStatus(deviceList.heavyDevice[i]).pin_state
+		});
+		console.log(raw.devices.heavyDevice_list);
 	};
 
 	// light list
 	for (var i = 0; i < raw.devices.lights_num; i++) {
-		raw.lights.list[i] = {
+		raw.devices.lights_list.push({
 			id: deviceList.lights[i],
 			name: 'lights',
-			state: pi.deviceStatus(deviceList.lights[i]).pinState
-		}
+			state: pi.deviceStatus(deviceList.lights[i]).pin_state
+		});
 	};
 
 	// fans list
 	for (var i = 0; i < raw.devices.fans_num; i++) {
-		raw.fans.list[i] = {
+		raw.devices.fans_list.push({
 			id: deviceList.fans[i],
 			name: 'fans',
-			state: pi.deviceStatus(deviceList.fans[i]).pinState
-		}
+			state: pi.deviceStatus(deviceList.fans[i]).pin_state
+		});
 	};
 
 	return raw;
