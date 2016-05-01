@@ -1,6 +1,6 @@
 var test = require('../customLibs/device_mapping');
 var pi_interface = require('../customLibs/pi_interface');
-var Gpio = require('onoff').Gpio;
+var Gpio= require('onoff').Gpio;
 
 var express = require('express');
 
@@ -74,12 +74,16 @@ router.get('/logout', function(req, res) {
 });
 
 
-/*
+
 router.get('/test', function(req, res){
-	test.addDevice("ac");
+	res.send("get device on");
+	pi_interface.deviceOn("fan1", function(status) {
+		if (status.status == "OK") console.log("fan is turned on");
+		else console.log("error in deviceOn function");
+	});
 	
 });
-*/
+
 
 /*
 router.get('/mock/getDeviceOn', function(req, res){
@@ -92,19 +96,19 @@ router.get('/mock/getDeviceOn', function(req, res){
 });
 */
 
-/*
-router.get('/mock/getDeviceStatus', function(req, res){
-	 pi_interface.deviceStatus("fan", function(status) {
-	 	console.log(status);
-	 });
+
+
+router.get('/getDeviceStatus', function(req, res){
+	res.send(pi_interface.deviceStatus("door1"));
 	
 });
-*/
 
-/*
-router.get('/mock/getDeviceOff', function(req, res){
+
+
+
+router.get('/getDeviceOff', function(req, res){
     res.send("get device off");
-	pi_interface.deviceOff("fan", function(status) {
+	pi_interface.deviceOff("fan1", function(status) {
 		if (status.status == "OK") console.log("fan is turned off");
 		else console.log("error in deviceOn function");
 	});
@@ -112,7 +116,7 @@ router.get('/mock/getDeviceOff', function(req, res){
 
 });
 
-*/
+
 /*
 router.get('/mock/removeDevice', function(req, res){
 	 test.removeDevice("fan");
@@ -121,4 +125,5 @@ router.get('/mock/removeDevice', function(req, res){
 */
 
 
-module.exports = router;
+
+module.exports=router;

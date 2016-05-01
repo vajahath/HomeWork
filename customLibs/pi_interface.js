@@ -3,7 +3,7 @@ var device_id_mapping = require('./device_mapping.js');
 
 var gpio_export = {
 
-	deviceStatus: function(device, callback) {
+	deviceStatus: function(device) {
 		var device_id = new Gpio(device_id_mapping[device], 'both');
 		var function_status = "OK";
 		var status = {
@@ -11,7 +11,8 @@ var gpio_export = {
 			"host": "pi",
 			"status": function_status
 		};
-		callback(status);
+		//callback(status);
+		return status;
 
 	},
 	deviceOn: function(device, callback) {
@@ -22,6 +23,7 @@ var gpio_export = {
 			"status": function_status
 		};
 		callback(status);
+		
 
 	},
 	deviceOff: function(device, callback) {

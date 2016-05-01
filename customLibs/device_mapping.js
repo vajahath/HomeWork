@@ -1,6 +1,7 @@
 var Device = require('../models/Device');
 var UnUsedPins = require('../models/UnUsedPin');
 
+/*
 var freepins;
 UnUsedPins.find({}, function(err, found) {
     console.log("err :", err);
@@ -14,6 +15,7 @@ UnUsedPins.find({}, function(err, found) {
     }
 });
 
+*/
 
 // JSON format for devices and their pins
 
@@ -21,20 +23,21 @@ var device_id_mapping = {
     'fan1': 17,
     'light1': 27,
     'ac': 22,
-    'door1': 23,
-    'door2': 45,
-    'window1': 5,
-    'window2': 4,
-    'washing': 57,
-    'refrigereator': 46,
-    'motor': 47,
-    'light2': 46
+    'door1': 4,
+    'door2': 5,
+    'window1': 6,
+    'window2': 13,
+    'washing': 19,
+    'refrigereator': 26,
+    'motor': 18,
+    'light2': 23
 };
 
 
 //Function to remove a device
 
 
+/*
 var pin_edit = {
 
     removeDevice: function(removingDevice) {
@@ -55,6 +58,7 @@ var pin_edit = {
             }
         });
     },
+*/
 
     //Function to add a device
 
@@ -89,9 +93,9 @@ var pin_edit = {
 
             }
         }
-    */
-};
+
+}; */
 
 
 module.exports = device_id_mapping;
-module.exports = pin_edit;
+//module.exports = pin_edit;
