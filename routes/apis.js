@@ -5,8 +5,8 @@ var pi = require('../customLibs/pi_interface');
 var router = express.Router();
 
 router.get('/populateme', function(req, res) {
-       // res.send(deviceList.doors[1]);
-        //res.send(pi.deviceStatus('door1').pin_state);
+	// res.send(deviceList.doors[1]);
+	//res.send(pi.deviceStatus('door1').pin_state);
 	res.send(deepDig(initializeSense()));
 	//res.send(deviceList.doors[1]);
 	//res.send({ pin: 1});
@@ -44,19 +44,23 @@ function initializeSense() {
 		partyMode: false,
 		doors: {
 			total: 2,
+			closed: 0,
 			list: []
 		},
 		windows: {
 			total: 2,
-			list:[]
+			closed: 0,
+			list: []
 		},
 		devices: {
+			on: 0,
+			off: 0,
 			heavyDevice_num: 4,
 			lights_num: 2,
 			fans_num: 1,
-			heavyDevice_list:[],
-			lights_list:[],
-			fans_list:[]
+			heavyDevice_list: [],
+			lights_list: [],
+			fans_list: []
 		}
 	}
 	return data;
@@ -75,6 +79,8 @@ function deepDig(raw) {
 			name: 'doors',
 			state: pi.deviceStatus(deviceList.doors[i]).pin_state
 		});
+		if (pi.deviceStatus(deviceList.doors[i]).pin_state) raw.doors.closed++;
+
 		console.log(raw.doors.list);
 	};
 
@@ -85,6 +91,8 @@ function deepDig(raw) {
 			name: 'windows',
 			state: pi.deviceStatus(deviceList.windows[i]).pin_state
 		});
+		if (pi.deviceStatus(deviceList.windows[i]).pin_state) raw.windows.closed++;
+
 		console.log(raw.windows.list);
 	};
 
@@ -95,6 +103,9 @@ function deepDig(raw) {
 			name: 'heavyDevice',
 			state: pi.deviceStatus(deviceList.heavyDevice[i]).pin_state
 		});
+		if (pi.deviceStatus(deviceList.heavyDevice[i]).pin_state) raw.devices.on++;
+		else raw.devices.off++;
+
 		console.log(raw.devices.heavyDevice_list);
 	};
 
@@ -105,6 +116,10 @@ function deepDig(raw) {
 			name: 'lights',
 			state: pi.deviceStatus(deviceList.lights[i]).pin_state
 		});
+
+		if (pi.deviceStatus(deviceList.lights[i]).pin_state) raw.devices.on++;
+		else raw.devices.off++;
+
 	};
 
 	// fans list
@@ -114,6 +129,8 @@ function deepDig(raw) {
 			name: 'fans',
 			state: pi.deviceStatus(deviceList.fans[i]).pin_state
 		});
+		if (pi.deviceStatus(deviceList.fans[i]).pin_state) raw.devices.on++;
+		else raw.devices.off++;
 	};
 
 	return raw;
@@ -121,7 +138,7 @@ function deepDig(raw) {
 };
 
 function getLogicString(subject, value) {
-	switch (value) {
+	switch (subject) {
 		// handle temperature
 		case 'temperature':
 			switch (true) {
@@ -163,5 +180,6 @@ function getLogicString(subject, value) {
 			}
 	}
 };
+
 
 module.exports = router;
