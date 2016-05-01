@@ -1,9 +1,9 @@
 var mongoose = require('mongoose');
 
 var pin = {
-    pins:Array
-    }
+	pins: Array
+}
 
 var pinSchema = mongoose.Schema(pin);
 
-module.exports = mongoose.model('UnUsedPin', pinSchema );
+module.exports = mongoose.model('UnUsedPin', pinSchema);

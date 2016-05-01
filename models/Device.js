@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 
 var device = {
 
-    };
+};
 
 /*
 var device = {
@@ -19,6 +19,6 @@ var device = {
 };
 */
 
-var deviceSchema = mongoose.Schema(device,{collection:"device"});
+var deviceSchema = mongoose.Schema(device, { collection: "device" });
 
 module.exports = mongoose.model('Device', deviceSchema);
