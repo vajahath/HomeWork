@@ -1,23 +1,29 @@
 var express = require('express');
 var Gpio = require('onoff').Gpio;
 var router = express.Router();
-
+var schedule = require('node-schedule');
 
 router.get('/', function(req, res) {
 	res.render("pi_test", {
 		title: "testing in pi"
 	});
 	console.log("testing in pi");
+	
+        var schedule = require('node-schedule');
+        var date = new Date(2016, 03, 27, 8, 6, 30);
 
+        var j = schedule.scheduleJob(date, function(){
+              console.log('The world is going to end today.');
+});
 	//To test the created functions
 
 	deviceOn("fan", function(status) {
-		if (status.status == "OK") console.log("bulb is turned on");
+		if (status.status == "OK") console.log("fan is turned on");
 		else console.log("error in deviceOn function");
 	});
 
 	deviceOn("bulb", function(status) {
-	 	if (status.status == "OK") console.log("fan is turned on");
+	 	if (status.status == "OK") console.log("bulb is turned on");
 	 	else console.log("error in deviceOn function");
 	 });
 
@@ -30,8 +36,8 @@ router.get('/', function(req, res) {
 	 deviceStatus("ac", function(status) {
 	 	console.log(status);
 	 });
-	 deviceOff("fan", function(status) {
-	 	if (status.status == "OK") console.log("fan is turned off");
+	 deviceOff("bulb", function(status) {
+	 	if (status.status == "OK") console.log("bulb is turned off");
 	 	else console.log("error in deviceOn function");
 	 });
 	 deviceStatus("fan", function(status) {
@@ -53,7 +59,7 @@ var device_id_mapping = {
 
 // function for getting status of devices
 function deviceStatus(device,callback){
-	var device_id = new Gpio(device_id_mapping[device], 'out');
+	var device_id = new Gpio(device_id_mapping[device], 'both');
 	var function_status = "OK";
 	var status = {
 		"pin_state": device_id.readSync(),

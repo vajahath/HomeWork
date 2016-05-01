@@ -5,6 +5,7 @@ var freepins;
 UnUsedPins.find({}, function(err, found){
     console.log("err :", err);
     console.log("found :", found[0].pins[1]);
+    console.log("found :", found);
     freepins=found[0].pins;
     //console.log('fp '+freepins[0]);
 
@@ -27,22 +28,34 @@ var device_id_mapping = {
 
 //Function to remove a device
 
+
+
 var pin_edit={
 
     removeDevice: function(removingDevice){
-        Device.findOneAndRemove({'device':removingDevice},function(err){
-            if(err) throw err;
+        freepins.push(device_id_mapping[removingDevice]);
+        delete device_id_mapping[removingDevice];
+        console.log(device_id_mapping);
+        Device.find({},function(err,found){
+            if (err) console.log("err, update is not successful "+err);
+            else{
             console.log("Device "+removingDevice+" has been removed");
-            unUsedPin.push(device_id_mapping[removingDevice]);//push pin of removing device to unUsedPin
-            Device.find({},function(err,devices){
-                if(err) throw err;
-                console.log(devices);
-                });
-            });
+            //found= undefined;
+            //found=device_id_mapping;
+            delete found[removingDevice];
+            console.log(found+" found");
+            UnUsedPins.update({_id: '571fd1d5047905253f72bf7a'},
+                { $set:{pins:freepins}},function(){console.log("updated");}
+                );
+            //push pin of removing device to unUsedPin
+
+            }
+        });
         },
 
     //Function to add a device
 
+/*
     addDevice: function(addingDevice){
 
         if(unUsedPins[0].pin==null)
@@ -73,7 +86,10 @@ var pin_edit={
 
         }
     }
+*/
 };
+
+
 
 module.exports=device_id_mapping;
 module.exports=pin_edit;
