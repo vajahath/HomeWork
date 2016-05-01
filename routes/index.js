@@ -1,6 +1,6 @@
 var test = require('../customLibs/device_mapping');
 var pi_interface = require('../customLibs/pi_interface');
-var Gpio= require('onoff').Gpio;
+var Gpio = require('onoff').Gpio;
 
 var express = require('express');
 
@@ -121,5 +121,4 @@ router.get('/mock/removeDevice', function(req, res){
 */
 
 
-
-module.exports=router;
+module.exports = router;

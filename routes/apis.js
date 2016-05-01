@@ -5,24 +5,21 @@ var pi = require('../customLibs/pi_interface');
 var router = express.Router();
 
 router.get('/populateme', function(req, res) {
-
-
-	res.send("hii");
-
-
+	res.send(deepDig(initializeSense()));
 });
 
 
 var deviceList = {
-	doors:['door1', 'door2'],
+	doors: ['door1', 'door2'],
 	windows: ['window1', 'window2'],
-	heavyDevice:['ac', 'washing', 'refrigereator', 'motor'],
-	lights:['light1', 'light2'],
-	fans:['fan1']
+	heavyDevice: ['ac', 'washing', 'refrigereator', 'motor'],
+	lights: ['light1', 'light2'],
+	fans: ['fan1']
 }
 
 
 function initializeSense() {
+
 	var data = {
 		temperature: {
 			inside: 30,
@@ -44,7 +41,7 @@ function initializeSense() {
 			total: 2
 		},
 		windows: {
-			total:2
+			total: 2
 		},
 		devices: {
 			heavyDevice_num: 4,
@@ -52,6 +49,7 @@ function initializeSense() {
 			fans_num: 1
 		}
 	}
+	return data;
 };
 
 // derive logic from available data.
@@ -63,8 +61,8 @@ function deepDig(raw) {
 	// doors
 	for (var i = 0; i < raw.doors.total; i++) {
 		raw.doors.list[i] = {
-			id : deviceList.doors[i],
-			name : 'doors',
+			id: deviceList.doors[i],
+			name: 'doors',
 			state: pi.deviceStatus(deviceList.doors[i]).pinState
 		}
 	};
@@ -72,8 +70,8 @@ function deepDig(raw) {
 	// windows
 	for (var i = 0; i < raw.windows.total; i++) {
 		raw.windows.list[i] = {
-			id : deviceList.windows[i],
-			name : 'windows',
+			id: deviceList.windows[i],
+			name: 'windows',
 			state: pi.deviceStatus(deviceList.windows[i]).pinState
 		}
 	};
@@ -81,8 +79,8 @@ function deepDig(raw) {
 	// heavy devices
 	for (var i = 0; i < raw.devices.heavyDevice_num; i++) {
 		raw.heavyDevice.list[i] = {
-			id : deviceList.heavyDevice[i],
-			name : 'heavyDevice',
+			id: deviceList.heavyDevice[i],
+			name: 'heavyDevice',
 			state: pi.deviceStatus(deviceList.heavyDevice[i]).pinState
 		}
 	};
@@ -90,8 +88,8 @@ function deepDig(raw) {
 	// light list
 	for (var i = 0; i < raw.devices.lights_num; i++) {
 		raw.lights.list[i] = {
-			id : deviceList.lights[i],
-			name : 'lights',
+			id: deviceList.lights[i],
+			name: 'lights',
 			state: pi.deviceStatus(deviceList.lights[i]).pinState
 		}
 	};
@@ -99,11 +97,13 @@ function deepDig(raw) {
 	// fans list
 	for (var i = 0; i < raw.devices.fans_num; i++) {
 		raw.fans.list[i] = {
-			id : deviceList.fans[i],
-			name : 'fans',
+			id: deviceList.fans[i],
+			name: 'fans',
 			state: pi.deviceStatus(deviceList.fans[i]).pinState
 		}
 	};
+
+	return raw;
 
 };
 
@@ -133,12 +133,12 @@ function getLogicString(subject, value) {
 			}
 			break;
 
-		// handle water
+			// handle water
 		case 'water':
 			return "22 hours left";
 			break;
 
-		// handle rain
+			// handle rain
 		case 'rain':
 			switch (true) {
 				case value < 50:
