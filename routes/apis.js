@@ -1,5 +1,5 @@
 var express = require('express');
-var q = require('q');
+
 var pi = require('../customLibs/pi_interface');
 
 var router = express.Router();
