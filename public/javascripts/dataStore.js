@@ -1,7 +1,7 @@
 // method to draw chart
 
 
-app.factory('dataStoreTest', ['$http', function($http) {
+app.factory('dataStore', ['$http', function($http) {
 	return {
 		data: {}
 	};
