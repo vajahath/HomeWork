@@ -115,15 +115,15 @@ router.get('/getDeviceOff', function(req, res){
 
 });
 
-router.get('/iotest', function(req, res){
-	io.emmit('msg', "hi");
-});
+// router.get('/iotest', function(req, res){
+// 	io.emmit('msg', "hi");
+// });
 
-io.on('connection', function(socket){
-	socket.on('msg', function(msg){
-		console.log(msg);
-	});
-});
+// io.on('connection', function(socket){
+// 	socket.on('msg', function(msg){
+// 		console.log(msg);
+// 	});
+// });
 /*
 router.get('/mock/removeDevice', function(req, res){
 	 test.removeDevice("fan");
@@ -133,4 +133,4 @@ router.get('/mock/removeDevice', function(req, res){
 
 
 
-module.exports=router(io);
+module.exports=router;

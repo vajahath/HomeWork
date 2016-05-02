@@ -14,7 +14,7 @@ var app = express();
 var io = socket_io();
 app.io = io;
 
-var routes = require('./routes/index')(io);
+var routes = require('./routes/index');
 var users = require('./routes/users');
 var uconsole = require('./routes/console');
 var pi_test = require('./routes/pi_test');
