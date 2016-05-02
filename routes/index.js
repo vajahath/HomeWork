@@ -5,6 +5,8 @@ var pi_interface = require('../customLibs/pi_interface');
 var Gpio= require('onoff').Gpio;
 var User = require('../models/User');
 
+var io = require('../app').io;
+
 var router = express.Router();
 
 /* GET home page. */
@@ -115,15 +117,15 @@ router.get('/getDeviceOff', function(req, res){
 
 });
 
-// router.get('/iotest', function(req, res){
-// 	io.emmit('msg', "hi");
-// });
+router.get('/iotest', function(req, res){
+	io.emmit('msg', "hi");
+});
 
-// io.on('connection', function(socket){
-// 	socket.on('msg', function(msg){
-// 		console.log(msg);
-// 	});
-// });
+io.on('connection', function(socket){
+	socket.on('msg', function(msg){
+		console.log(msg);
+	});
+});
 /*
 router.get('/mock/removeDevice', function(req, res){
 	 test.removeDevice("fan");

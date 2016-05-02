@@ -19,7 +19,7 @@ var users = require('./routes/users');
 var uconsole = require('./routes/console');
 var pi_test = require('./routes/pi_test');
 var apis = require('./routes/apis');
-var play = require('./routes/play')(io);
+var play = require('./routes/play');
 
 
 // view engine setup

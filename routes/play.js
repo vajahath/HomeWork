@@ -1,10 +1,22 @@
-module.exports = function(io) {
-    var app = require('express');
-    var router = app.Router();
+var express = require('express');
+var router = express.Router();
 
-    io.on('connection', function(socket) { 
-        console.log("socket io connection"); 
-    });
+// require player
+// var Player = require('player');
 
-    return router;
-}
+/* GET home page. */
+router.get('/', function(req, res) {
+	// res.render('play', {
+	// 	title: "Play | HomeWork"
+	// });
+});
+
+// create player instance
+// var player = new Player('http://mr4.douban.com/blablablabla/p1949332.mp3');
+
+// play now and callback when playend
+// player.play(function(err, player){
+//   console.log('playend!');
+// });
+
+module.exports = router;
