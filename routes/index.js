@@ -2,8 +2,9 @@ var test = require('../customLibs/device_mapping');
 var pi_interface = require('../customLibs/pi_interface');
 var Gpio= require('onoff').Gpio;
 
-var express = require('express');
-var io = require('socket.io');
+var app = require('express')();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 
 var User = require('../models/User');
 
