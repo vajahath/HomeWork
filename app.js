@@ -14,12 +14,12 @@ var app = express();
 var io = socket_io();
 app.io = io;
 
-var routes = require('./routes/index')(io);
+var routes = require('./routes/index');
 var users = require('./routes/users');
 var uconsole = require('./routes/console');
 var pi_test = require('./routes/pi_test');
 var apis = require('./routes/apis');
-var play = require('./routes/play');
+var play = require('./routes/play')(io);
 
 
 // view engine setup
