@@ -120,7 +120,7 @@ router.get('/getDeviceOff', function(req, res){
 });
 
 router.get('/iotest', function(req, res){
-	io.emmit('msg', "hi");
+	io.emit('msg', "hi");
 });
 
 io.on('connection', function(socket){
