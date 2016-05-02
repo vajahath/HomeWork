@@ -5,7 +5,7 @@ var pi_interface = require('../customLibs/pi_interface');
 var Gpio= require('onoff').Gpio;
 var User = require('../models/User');
 
-var router = express.Router();
+var router = app.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
