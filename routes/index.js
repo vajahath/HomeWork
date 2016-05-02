@@ -3,6 +3,7 @@ var pi_interface = require('../customLibs/pi_interface');
 var Gpio= require('onoff').Gpio;
 
 var express = require('express');
+var io = require('socket.io');
 
 var User = require('../models/User');
 
