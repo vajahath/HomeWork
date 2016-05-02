@@ -9,16 +9,18 @@ var mongoose = require('mongoose');
 
 var socket_io = require("socket.io");
 
+var app = express();
+
+var io = socket_io();
+app.io = io;
+
 var routes = require('./routes/index')(io);
 var users = require('./routes/users');
 var uconsole = require('./routes/console');
 var pi_test = require('./routes/pi_test');
 var apis = require('./routes/apis');
-var play = require('./routes/play');
-var app = express();
+var play = require('./routes/play')(io);
 
-var io = socket_io();
-app.io = io;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
