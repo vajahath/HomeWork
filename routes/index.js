@@ -5,8 +5,6 @@ var pi_interface = require('../customLibs/pi_interface');
 var Gpio= require('onoff').Gpio;
 var User = require('../models/User');
 
-var io = require('../app').socket_io;
-
 var router = express.Router();
 
 /* GET home page. */
@@ -135,4 +133,4 @@ router.get('/mock/removeDevice', function(req, res){
 
 
 
-module.exports=router;
+module.exports=router(io);
