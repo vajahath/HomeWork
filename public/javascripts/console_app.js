@@ -2,10 +2,10 @@ var app = angular.module('homeWork_console', []);
 
 app.controller('console_controller', [
 	'$scope',
-	'datastore',
+	'dataStore',
 	'charts',
 	'$http',
-	function($scope, datastore, charts, $http) {
+	function($scope, dataStore, charts, $http) {
 
 		$scope.data = datastore;
 		charts.drawChart();
