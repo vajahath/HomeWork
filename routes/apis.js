@@ -145,16 +145,16 @@ function getLogicString(subject, value) {
 				case value < 10:
 					return "extremely cold";
 					break;
-				case 10 <= value < 20:
+				case (10<=value)&&(value<20):
 					return "cold";
 					break;
-				case 20 <= value < 28:
+				case (20<=value)&&(value<28):
 					return "nice environment";
 					break;
-				case 28 <= value < 33:
+				case (28<=value)&&(value<33):
 					return "its getting hot";
 					break;
-				case 33 <= value < 38:
+				case (33<=value)&&(value<38):
 					return "very hot, drink more water";
 					break;
 				case value > 38:
