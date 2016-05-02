@@ -4,6 +4,8 @@ var test = require('../customLibs/device_mapping');
 var pi_interface = require('../customLibs/pi_interface');
 var Gpio= require('onoff').Gpio;
 
+var io = require('../app').io;
+
 var User = require('../models/User');
 
 var router = express.Router();

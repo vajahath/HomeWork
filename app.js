@@ -7,6 +7,10 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var mongoose = require('mongoose');
 
+var appp = require('express')();
+var http = require('http').Server(appp);
+var io = require('socket.io')(http);
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var uconsole = require('./routes/console');
