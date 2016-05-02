@@ -23,7 +23,7 @@ app.use(cookieParser());
 app.use(express.static('public'));
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+app.get('/', function(req, res, next) {
 	if (req.session.user) {
 		res.redirect('/poll');
 	} else {
