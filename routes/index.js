@@ -4,12 +4,23 @@ var test = require('../customLibs/device_mapping');
 var pi_interface = require('../customLibs/pi_interface');
 var Gpio = require('onoff').Gpio;
 var User = require('../models/User');
+var path = require('path');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+
 
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
 var router = express.Router();
+
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static('public'));
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
