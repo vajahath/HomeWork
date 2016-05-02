@@ -2,7 +2,7 @@ var express = require('express');
 
 var test = require('../customLibs/device_mapping');
 var pi_interface = require('../customLibs/pi_interface');
-var Gpio= require('onoff').Gpio;
+var Gpio = require('onoff').Gpio;
 var User = require('../models/User');
 
 var app = require('express')();
@@ -77,14 +77,13 @@ router.get('/logout', function(req, res) {
 });
 
 
-
-router.get('/test', function(req, res){
+router.get('/test', function(req, res) {
 	res.send("get device on");
 	pi_interface.deviceOn("fan1", function(status) {
 		if (status.status == "OK") console.log("fan is turned on");
 		else console.log("error in deviceOn function");
 	});
-	
+
 });
 
 
@@ -100,31 +99,28 @@ router.get('/mock/getDeviceOn', function(req, res){
 */
 
 
-
-router.get('/getDeviceStatus', function(req, res){
+router.get('/getDeviceStatus', function(req, res) {
 	res.send(pi_interface.deviceStatus("door1"));
-	
+
 });
 
 
-
-
-router.get('/getDeviceOff', function(req, res){
-    res.send("get device off");
+router.get('/getDeviceOff', function(req, res) {
+	res.send("get device off");
 	pi_interface.deviceOff("fan1", function(status) {
 		if (status.status == "OK") console.log("fan is turned off");
 		else console.log("error in deviceOn function");
 	});
-	
+
 
 });
 
-router.get('/iotest', function(req, res){
+router.get('/iotest', function(req, res) {
 	io.emit('msg', "hi");
 });
 
-io.on('connection', function(socket){
-	socket.on('msg', function(msg){
+io.on('connection', function(socket) {
+	socket.on('msg', function(msg) {
 		console.log(msg);
 	});
 });
@@ -134,11 +130,9 @@ router.get('/mock/removeDevice', function(req, res){
 	
 });
 */
-http.listen(3000, function()
-{
-    console.log('listening on *:3000');
+http.listen(3000, function() {
+	console.log('socket listening on pot:3000');
 });
 
 
-
-module.exports=router;
+module.exports = router;

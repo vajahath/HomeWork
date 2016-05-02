@@ -15,9 +15,6 @@ var apis = require('./routes/apis');
 var play = require('./routes/play');
 var app = express();
 
-var server = require('http').Server(app);
-var io = require('socket.io')(server);
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
