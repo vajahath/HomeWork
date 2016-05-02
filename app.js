@@ -9,7 +9,7 @@ var mongoose = require('mongoose');
 
 var socket_io = require("socket.io");
 
-var routes = require('./routes/index');
+var routes = require('./routes/index')(io);
 var users = require('./routes/users');
 var uconsole = require('./routes/console');
 var pi_test = require('./routes/pi_test');
