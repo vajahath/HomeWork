@@ -7,8 +7,8 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var mongoose = require('mongoose');
 // coonfig.ing socket.io
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+// var http = require('http').Server(app);
+// var io = require('socket.io')(http);
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
